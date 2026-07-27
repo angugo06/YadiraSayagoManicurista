@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio · Luucyy Nails</title>
+<meta name="description" content="Portafolio de diseños de uñas de Yadira Sayago: nail art, acrílico, gelish, chrome y efectos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html">Luucyy Nails<small>by Yadira Sayago</small></a>
+  <div class="links" id="links">
+    <a href="index.html">Inicio</a>
+    <a href="portafolio.html" class="active">Portafolio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="prensa.html">Prensa</a>
+    <a href="agenda.html">Agenda</a>
+    <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
+  </div>
+  <a class="btn btn-primary desk" href="agenda.html"><span>Agendar cita</span></a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <section class="section first">
+    <div class="head-block">
+      <span class="eyebrow reveal">El trabajo</span>
+      <h2 class="reveal">Portafolio</h2>
+      <p class="reveal">Cada pieza es un diseño real. Filtra por técnica para ver la variedad, desde nail art a mano alzada hasta acabados de color y textura.</p>
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="chip active" data-f="all">Todo</button>
+      <button class="chip" data-f="nailart">Nail Art y Diseño</button>
+      <button class="chip" data-f="chrome">Chrome y efectos</button>
+      <button class="chip" data-f="esculturales">Esculturales</button>
+      <button class="chip" data-f="gel">Gel semipermanente</button>
+      <button class="chip" data-f="prensa">Prensa</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<div class="marquee"><div class="marquee-track">
+  <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
+  <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
+  <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
+  <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
+</div></div>
+
+<footer>
+  <div class="brand">Luucyy Nails<small>by Yadira Sayago</small></div>
+  <div class="fnav">
+    <a href="index.html">Inicio</a><a href="portafolio.html">Portafolio</a>
+    <a href="servicios.html">Servicios</a><a href="prensa.html">Prensa</a><a href="agenda.html">Agenda</a>
+  </div>
+  <div class="fine">Ciudad de México · Manicura profesional</div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn fab fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+  <a class="btn btn-primary fab" href="agenda.html"><span>Agendar</span></a>
+</div>
+
+<div class="lb" id="lb">
+  <div class="lb-card">
+    <div class="pic"><button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button></div>
+    <div class="info">
+      <span class="eyebrow" id="lbCat">Categoría</span>
+      <h3 id="lbName">Nombre</h3>
+      <p>Aquí irá la foto real de esta pieza. En la versión final cada recuadro se reemplaza por la imagen correspondiente de la carpeta.</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
