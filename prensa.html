@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Prensa · Luucyy Nails</title>
 <meta name="description" content="Reconocimiento al trabajo de Yadira Sayago, con presencia en medios.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,80 +11,70 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<nav class="nav" id="nav">
-  <a class="brand" href="index.html">Luucyy Nails<small>by Yadira Sayago</small></a>
-  <div class="links" id="links">
-    <a href="index.html">Inicio</a>
-    <a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="prensa.html" class="active">Prensa</a>
-    <a href="agenda.html">Agenda</a>
-    <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
-  </div>
-  <a class="btn btn-primary desk" href="agenda.html"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
-</nav>
-
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><span>Luucyy Nails</span><small>by Yadira Sayago</small></a>
+  <nav aria-label="Navegación principal">
+    <ul class="links" id="links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="portafolio.html">Portafolio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="prensa.html" aria-current="page">Prensa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li class="nav-cta-mobile"><a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="agenda.html"><span>Agendar cita</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
 <main>
-  <section class="section first">
+  <section class="section first" aria-labelledby="press-h">
     <div class="press-hero">
       <div class="txt">
-        <span class="eyebrow reveal">Prensa</span>
-        <h2 class="reveal">Reconocimiento a su trabajo</h2>
+        <p class="eyebrow reveal">Prensa</p>
+        <h2 id="press-h" class="reveal">Reconocimiento a su trabajo</h2>
         <p class="reveal">Su trabajo se ha mostrado en medios, incluyendo apariciones en Venga la Alegría (TV Azteca). Un respaldo a la calidad y el detalle en cada diseño.</p>
-        <span class="tv-tag reveal">✦ Con presencia en medios</span>
+        <p class="tv-tag reveal">✦ Con presencia en medios</p>
       </div>
-      <div class="reveal">
-        <div class="tile-img c-prensa" data-img="prensa/destacada" style="--a:150deg;aspect-ratio:4/3;border-radius:16px">
-          <span class="tag">Prensa</span>
-          <div class="ph-label">
-            <span class="ic">✦</span><b>Aparición en medios</b>
-            <small>Foto o nota de prensa</small>
-          </div>
-        </div>
-      </div>
+      <figure class="press-figure reveal">
+        <img src="assets/img/prensa/destacada.jpg" alt="Aparición en medios de Yadira Sayago" loading="lazy" width="800" height="600">
+      </figure>
     </div>
-    <div class="press-shots reveal">
-      <figure class="tile" data-cat="prensa" data-name="Aparición en medios · 1"><div class="tile-img c-prensa" style="--a:135deg"><span class="tag">Prensa</span><span class="cam">◇ foto 1</span></div></figure>
-      <figure class="tile" data-cat="prensa" data-name="Aparición en medios · 2"><div class="tile-img c-prensa" style="--a:150deg"><span class="tag">Prensa</span><span class="cam">◇ foto 2</span></div></figure>
-      <figure class="tile" data-cat="prensa" data-name="Aparición en medios · 3"><div class="tile-img c-prensa" style="--a:165deg"><span class="tag">Prensa</span><span class="cam">◇ foto 3</span></div></figure>
-    </div>
+    <ul class="press-shots reveal">
+      <li><figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-1.jpg" alt="Aparición en medios · 1" loading="lazy" width="440" height="586"><figcaption>Aparición en medios · 1</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-2.jpg" alt="Aparición en medios · 2" loading="lazy" width="440" height="586"><figcaption>Aparición en medios · 2</figcaption></figure></li>
+      <li><figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-3.jpg" alt="Aparición en medios · 3" loading="lazy" width="440" height="586"><figcaption>Aparición en medios · 3</figcaption></figure></li>
+    </ul>
   </section>
 </main>
-
-<div class="marquee"><div class="marquee-track">
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
 </div></div>
-
-<footer>
-  <div class="brand">Luucyy Nails<small>by Yadira Sayago</small></div>
-  <div class="fnav">
-    <a href="index.html">Inicio</a><a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a><a href="prensa.html">Prensa</a><a href="agenda.html">Agenda</a>
-  </div>
-  <div class="fine">Ciudad de México · Manicura profesional</div>
+<footer class="foot">
+  <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
+  <nav aria-label="Pie de página"><ul>
+    <li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li>
+    <li><a href="servicios.html">Servicios</a></li><li><a href="prensa.html">Prensa</a></li><li><a href="agenda.html">Agenda</a></li>
+  </ul></nav>
+  <p class="fine">Ciudad de México · Manicura profesional</p>
 </footer>
-
 <div class="dock" id="dock">
-  <a class="btn fab fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
-  <a class="btn btn-primary fab" href="agenda.html"><span>Agendar</span></a>
+  <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+  <a class="btn btn-primary" href="agenda.html"><span>Agendar</span></a>
 </div>
-
-<div class="lb" id="lb">
-  <div class="lb-card">
-    <div class="pic"><button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button></div>
-    <div class="info">
-      <span class="eyebrow" id="lbCat">Categoría</span>
-      <h3 id="lbName">Nombre</h3>
-      <p>Aquí irá la foto real de esta pieza. En la versión final cada recuadro se reemplaza por la imagen correspondiente de la carpeta.</p>
-    </div>
-  </div>
-</div>
-
+<dialog class="lb" id="lb">
+  <figure>
+    <button class="lb-close" aria-label="Cerrar">✕</button>
+    <img src="" alt="">
+    <figcaption class="info">
+      <span class="eyebrow">Categoría</span>
+      <h3>Nombre</h3>
+      <p>Foto del portafolio de Yadira Sayago.</p>
+    </figcaption>
+  </figure>
+</dialog>
 <script src="assets/app.js"></script>
 </body>
 </html>

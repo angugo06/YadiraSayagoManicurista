@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Portafolio · Luucyy Nails</title>
 <meta name="description" content="Portafolio de diseños de uñas de Yadira Sayago: nail art, acrílico, gelish, chrome y efectos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,72 +11,153 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<nav class="nav" id="nav">
-  <a class="brand" href="index.html">Luucyy Nails<small>by Yadira Sayago</small></a>
-  <div class="links" id="links">
-    <a href="index.html">Inicio</a>
-    <a href="portafolio.html" class="active">Portafolio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="prensa.html">Prensa</a>
-    <a href="agenda.html">Agenda</a>
-    <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
-  </div>
-  <a class="btn btn-primary desk" href="agenda.html"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
-</nav>
-
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><span>Luucyy Nails</span><small>by Yadira Sayago</small></a>
+  <nav aria-label="Navegación principal">
+    <ul class="links" id="links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="portafolio.html" aria-current="page">Portafolio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="prensa.html">Prensa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li class="nav-cta-mobile"><a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="agenda.html"><span>Agendar cita</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
 <main>
-  <section class="section first">
-    <div class="head-block">
-      <span class="eyebrow reveal">El trabajo</span>
-      <h2 class="reveal">Portafolio</h2>
+  <section class="section first" aria-labelledby="port-h">
+    <header class="head-block">
+      <p class="eyebrow reveal">El trabajo</p>
+      <h2 id="port-h" class="reveal">Portafolio</h2>
       <p class="reveal">Cada pieza es un diseño real. Filtra por técnica para ver la variedad, desde nail art a mano alzada hasta acabados de color y textura.</p>
+    </header>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filtrar por técnica">
+      <button class="chip" data-f="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-f="nailart" aria-pressed="false">Nail Art y Diseño</button>
+      <button class="chip" data-f="chrome" aria-pressed="false">Chrome y efectos</button>
+      <button class="chip" data-f="esculturales" aria-pressed="false">Esculturales</button>
+      <button class="chip" data-f="gel" aria-pressed="false">Gel semipermanente</button>
+      <button class="chip" data-f="prensa" aria-pressed="false">Prensa</button>
     </div>
-    <div class="filters reveal" id="filters">
-      <button class="chip active" data-f="all">Todo</button>
-      <button class="chip" data-f="nailart">Nail Art y Diseño</button>
-      <button class="chip" data-f="chrome">Chrome y efectos</button>
-      <button class="chip" data-f="esculturales">Esculturales</button>
-      <button class="chip" data-f="gel">Gel semipermanente</button>
-      <button class="chip" data-f="prensa">Prensa</button>
-    </div>
-    <div class="grid" id="grid"></div>
+    <ul class="grid">
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/cat-eye-y-flor.jpg" alt="Diseño de uñas: Cat eye y flor" loading="lazy" width="440" height="550"><figcaption>Cat eye y flor</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-dorado.jpg" alt="Diseño de uñas: Chrome dorado" loading="lazy" width="440" height="550"><figcaption>Chrome dorado</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve.jpg" alt="Diseño de uñas: Chrome relieve" loading="lazy" width="440" height="550"><figcaption>Chrome relieve</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve-y-aerografo.jpg" alt="Diseño de uñas: Chrome relieve y aerógrafo" loading="lazy" width="440" height="550"><figcaption>Chrome relieve y aerógrafo</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/efecto-aurora.jpg" alt="Diseño de uñas: Efecto aurora" loading="lazy" width="440" height="550"><figcaption>Efecto aurora</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/aerografo-y-piedras.jpg" alt="Diseño de uñas: Aerógrafo y piedras" loading="lazy" width="440" height="550"><figcaption>Aerógrafo y piedras</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/brillos-y-relieve-plata.jpg" alt="Diseño de uñas: Brillos y relieve plata" loading="lazy" width="440" height="550"><figcaption>Brillos y relieve plata</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/cartoon-pato-donald.jpg" alt="Diseño de uñas: Cartoon pato Donald" loading="lazy" width="440" height="550"><figcaption>Cartoon pato Donald</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/chiikawa-cartoon.jpg" alt="Diseño de uñas: Chiikawa cartoon" loading="lazy" width="440" height="550"><figcaption>Chiikawa cartoon</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/cola-de-sirena-encapsulada.jpg" alt="Diseño de uñas: Cola de sirena encapsulada" loading="lazy" width="440" height="550"><figcaption>Cola de sirena encapsulada</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/diseno-amarillo-azul.jpg" alt="Diseño de uñas: Diseño amarillo-azul" loading="lazy" width="440" height="550"><figcaption>Diseño amarillo-azul</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/full-color.jpg" alt="Diseño de uñas: Full color" loading="lazy" width="440" height="550"><figcaption>Full color</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/full-relieve.jpg" alt="Diseño de uñas: Full relieve" loading="lazy" width="440" height="550"><figcaption>Full relieve</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/lineas-y-piedras.jpg" alt="Diseño de uñas: Líneas y piedras" loading="lazy" width="440" height="550"><figcaption>Líneas y piedras</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/muneca-y-flores.jpg" alt="Diseño de uñas: Muñeca y flores" loading="lazy" width="440" height="550"><figcaption>Muñeca y flores</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/osos-escandalosos.jpg" alt="Diseño de uñas: Osos escandalosos" loading="lazy" width="440" height="550"><figcaption>Osos escandalosos</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/pastel-y-mano-alzada.jpg" alt="Diseño de uñas: Pastel y mano alzada" loading="lazy" width="440" height="550"><figcaption>Pastel y mano alzada</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/press-on-con-blooming.jpg" alt="Diseño de uñas: Press on con blooming" loading="lazy" width="440" height="550"><figcaption>Press on con blooming</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/relieve-mate.jpg" alt="Diseño de uñas: Relieve mate" loading="lazy" width="440" height="550"><figcaption>Relieve mate</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/scary-movie.jpg" alt="Diseño de uñas: Scary movie" loading="lazy" width="440" height="550"><figcaption>Scary movie</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="esculturales" data-label="Esculturales">
+        <figure class="tile"><img src="assets/img/esculturales/esculturales-lechosas.jpg" alt="Diseño de uñas: Esculturales lechosas" loading="lazy" width="440" height="550"><figcaption>Esculturales lechosas</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="gel" data-label="Gel semipermanente">
+        <figure class="tile"><img src="assets/img/gel-semipermanente/flores.jpg" alt="Diseño de uñas: Flores" loading="lazy" width="440" height="550"><figcaption>Flores</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="gel" data-label="Gel semipermanente">
+        <figure class="tile"><img src="assets/img/gel-semipermanente/frances-y-limones.jpg" alt="Diseño de uñas: Francés y limones" loading="lazy" width="440" height="550"><figcaption>Francés y limones</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="gel" data-label="Gel semipermanente">
+        <figure class="tile"><img src="assets/img/gel-semipermanente/lineas.jpg" alt="Diseño de uñas: Líneas" loading="lazy" width="440" height="550"><figcaption>Líneas</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="gel" data-label="Gel semipermanente">
+        <figure class="tile"><img src="assets/img/gel-semipermanente/snoopy-navideno.jpg" alt="Diseño de uñas: Snoopy navideño" loading="lazy" width="440" height="550"><figcaption>Snoopy navideño</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="prensa" data-label="Prensa">
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-1.jpg" alt="Diseño de uñas: Aparición en medios · 1" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 1</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="prensa" data-label="Prensa">
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-2.jpg" alt="Diseño de uñas: Aparición en medios · 2" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 2</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="prensa" data-label="Prensa">
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-3.jpg" alt="Diseño de uñas: Aparición en medios · 3" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 3</figcaption></figure>
+      </li>
+    </ul>
   </section>
 </main>
-
-<div class="marquee"><div class="marquee-track">
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
 </div></div>
-
-<footer>
-  <div class="brand">Luucyy Nails<small>by Yadira Sayago</small></div>
-  <div class="fnav">
-    <a href="index.html">Inicio</a><a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a><a href="prensa.html">Prensa</a><a href="agenda.html">Agenda</a>
-  </div>
-  <div class="fine">Ciudad de México · Manicura profesional</div>
+<footer class="foot">
+  <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
+  <nav aria-label="Pie de página"><ul>
+    <li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li>
+    <li><a href="servicios.html">Servicios</a></li><li><a href="prensa.html">Prensa</a></li><li><a href="agenda.html">Agenda</a></li>
+  </ul></nav>
+  <p class="fine">Ciudad de México · Manicura profesional</p>
 </footer>
-
 <div class="dock" id="dock">
-  <a class="btn fab fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
-  <a class="btn btn-primary fab" href="agenda.html"><span>Agendar</span></a>
+  <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+  <a class="btn btn-primary" href="agenda.html"><span>Agendar</span></a>
 </div>
-
-<div class="lb" id="lb">
-  <div class="lb-card">
-    <div class="pic"><button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button></div>
-    <div class="info">
-      <span class="eyebrow" id="lbCat">Categoría</span>
-      <h3 id="lbName">Nombre</h3>
-      <p>Aquí irá la foto real de esta pieza. En la versión final cada recuadro se reemplaza por la imagen correspondiente de la carpeta.</p>
-    </div>
-  </div>
-</div>
-
+<dialog class="lb" id="lb">
+  <figure>
+    <button class="lb-close" aria-label="Cerrar">✕</button>
+    <img src="" alt="">
+    <figcaption class="info">
+      <span class="eyebrow">Categoría</span>
+      <h3>Nombre</h3>
+      <p>Foto del portafolio de Yadira Sayago.</p>
+    </figcaption>
+  </figure>
+</dialog>
 <script src="assets/app.js"></script>
 </body>
 </html>

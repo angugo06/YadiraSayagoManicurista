@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Servicios · Luucyy Nails</title>
 <meta name="description" content="Servicios de manicura de Yadira Sayago: manicura de precisión, nail art, acrílico, gelish, chrome y más.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,65 +11,61 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<nav class="nav" id="nav">
-  <a class="brand" href="index.html">Luucyy Nails<small>by Yadira Sayago</small></a>
-  <div class="links" id="links">
-    <a href="index.html">Inicio</a>
-    <a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html" class="active">Servicios</a>
-    <a href="prensa.html">Prensa</a>
-    <a href="agenda.html">Agenda</a>
-    <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
-  </div>
-  <a class="btn btn-primary desk" href="agenda.html"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
-</nav>
-
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><span>Luucyy Nails</span><small>by Yadira Sayago</small></a>
+  <nav aria-label="Navegación principal">
+    <ul class="links" id="links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="portafolio.html">Portafolio</a></li>
+      <li><a href="servicios.html" aria-current="page">Servicios</a></li>
+      <li><a href="prensa.html">Prensa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li class="nav-cta-mobile"><a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="agenda.html"><span>Agendar cita</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
 <main>
-  <section class="section first">
-    <div class="head-block">
-      <span class="eyebrow reveal">Lo que hago</span>
-      <h2 class="reveal">Servicios y especialidades</h2>
+  <section class="section first" aria-labelledby="svc-h">
+    <header class="head-block">
+      <p class="eyebrow reveal">Lo que hago</p>
+      <h2 id="svc-h" class="reveal">Servicios y especialidades</h2>
       <p class="reveal">Servicio completo de manicura, con enfoque en diseño y acabados de alto nivel.</p>
-    </div>
-    <div class="svc-grid reveal">
-      <div class="svc"><div class="n">01</div><h3>Manicura de precisión</h3><p>Cutícula impecable y forma perfecta como base de todo diseño.</p></div>
-      <div class="svc"><div class="n">02</div><h3>Nail art a mano alzada</h3><p>Diseños personalizados, desde lo delicado hasta lo editorial.</p></div>
-      <div class="svc"><div class="n">03</div><h3>Esculturales en acrílico</h3><p>Extensiones a medida, naturales, resistentes y bien estructuradas.</p></div>
-      <div class="svc"><div class="n">04</div><h3>Gelish y gel semipermanente</h3><p>Color que dura semanas con acabado parejo y brillante.</p></div>
-      <div class="svc"><div class="n">05</div><h3>Chrome y efectos</h3><p>Cat eye, efecto aurora, blooming y espejo cromado.</p></div>
-      <div class="svc"><div class="n">06</div><h3>Encapsulado y pedrería</h3><p>Detalles 3D, piedras y encapsulados de acabado limpio.</p></div>
-    </div>
-    <div class="badges reveal">
-      <span class="badge"><span class="d"></span>Bioseguridad por protocolo</span>
-      <span class="badge"><span class="d"></span>Atención en español e inglés</span>
-      <span class="badge"><span class="d"></span>Marcas profesionales (Masglo)</span>
-    </div>
+    </header>
+    <ul class="svc-grid reveal">
+      <li class="svc"><span class="n">01</span><h3>Manicura de precisión</h3><p>Cutícula impecable y forma perfecta como base de todo diseño.</p></li>
+      <li class="svc"><span class="n">02</span><h3>Nail art a mano alzada</h3><p>Diseños personalizados, desde lo delicado hasta lo editorial.</p></li>
+      <li class="svc"><span class="n">03</span><h3>Esculturales en acrílico</h3><p>Extensiones a medida, naturales, resistentes y bien estructuradas.</p></li>
+      <li class="svc"><span class="n">04</span><h3>Gelish y gel semipermanente</h3><p>Color que dura semanas con acabado parejo y brillante.</p></li>
+      <li class="svc"><span class="n">05</span><h3>Chrome y efectos</h3><p>Cat eye, efecto aurora, blooming y espejo cromado.</p></li>
+      <li class="svc"><span class="n">06</span><h3>Encapsulado y pedrería</h3><p>Detalles 3D, piedras y encapsulados de acabado limpio.</p></li>
+    </ul>
+    <ul class="badges reveal">
+      <li class="badge">Bioseguridad por protocolo</li>
+      <li class="badge">Atención en español e inglés</li>
+      <li class="badge">Marcas profesionales (Masglo)</li>
+    </ul>
   </section>
 </main>
-
-<div class="marquee"><div class="marquee-track">
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
 </div></div>
-
-<footer>
-  <div class="brand">Luucyy Nails<small>by Yadira Sayago</small></div>
-  <div class="fnav">
-    <a href="index.html">Inicio</a><a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a><a href="prensa.html">Prensa</a><a href="agenda.html">Agenda</a>
-  </div>
-  <div class="fine">Ciudad de México · Manicura profesional</div>
+<footer class="foot">
+  <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
+  <nav aria-label="Pie de página"><ul>
+    <li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li>
+    <li><a href="servicios.html">Servicios</a></li><li><a href="prensa.html">Prensa</a></li><li><a href="agenda.html">Agenda</a></li>
+  </ul></nav>
+  <p class="fine">Ciudad de México · Manicura profesional</p>
 </footer>
-
 <div class="dock" id="dock">
-  <a class="btn fab fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
-  <a class="btn btn-primary fab" href="agenda.html"><span>Agendar</span></a>
+  <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+  <a class="btn btn-primary" href="agenda.html"><span>Agendar</span></a>
 </div>
-
 <script src="assets/app.js"></script>
 </body>
 </html>

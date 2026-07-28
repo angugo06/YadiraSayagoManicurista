@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Luucyy Nails · Yadira Sayago · Manicurista en CDMX</title>
 <meta name="description" content="Yadira Sayago, manicurista de alto nivel en la Ciudad de México. Manicura de precisión, nail art y diseño a tu medida. Agenda en línea.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,105 +11,108 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<nav class="nav" id="nav">
-  <a class="brand" href="index.html">Luucyy Nails<small>by Yadira Sayago</small></a>
-  <div class="links" id="links">
-    <a href="index.html" class="active">Inicio</a>
-    <a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="prensa.html">Prensa</a>
-    <a href="agenda.html">Agenda</a>
-    <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
-  </div>
-  <a class="btn btn-primary desk" href="agenda.html"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
-</nav>
-
+<header class="nav" id="nav">
+  <a class="brand" href="index.html"><span>Luucyy Nails</span><small>by Yadira Sayago</small></a>
+  <nav aria-label="Navegación principal">
+    <ul class="links" id="links">
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li><a href="portafolio.html">Portafolio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="prensa.html">Prensa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li class="nav-cta-mobile"><a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="agenda.html"><span>Agendar cita</span></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
 <main>
-  <section class="hero">
+  <section class="hero" aria-label="Presentación">
     <div class="hero-copy">
-      <span class="eyebrow reveal">Manicurista de alto nivel · CDMX</span>
+      <p class="eyebrow reveal">Manicurista de alto nivel · CDMX</p>
       <h1 class="reveal">Yadira <span class="it name-accent">Sayago</span></h1>
-      <p class="reveal">Manicura de precisión y nail art. Más de 4 años creando uñas que se llevan como una joya, con atención también en inglés.</p>
-      <div class="hero-cta reveal">
+      <p class="lead reveal">Manicura de precisión y nail art. Más de 4 años creando uñas que se llevan como una joya, con atención también en inglés.</p>
+      <p class="hero-cta reveal">
         <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
         <a class="btn btn-ghost" href="portafolio.html">Ver portafolio</a>
-      </div>
+      </p>
     </div>
-    <div class="hero-visual reveal" data-img="hero">
-      <div class="ph-label">
-        <span class="ic">◇</span>
-        <b>Foto principal</b>
-        <small>Un diseño estrella (ej. Cat eye y flor)</small>
-      </div>
-    </div>
+    <figure class="hero-visual reveal">
+      <img src="assets/img/hero.jpg" alt="Diseño de uñas destacado de Yadira Sayago" width="880" height="1100">
+    </figure>
   </section>
 
-  <div class="stats">
-    <div class="stat reveal"><b>+<span data-count="4">0</span></b><span>años de experiencia</span></div>
-    <div class="stat reveal"><b>+<span data-count="25">0</span></b><span>diseños en el portafolio</span></div>
-    <div class="stat txt reveal"><b>ES · EN</b><span>atención en español e inglés</span></div>
-    <div class="stat txt reveal"><b>✓</b><span>bioseguridad por protocolo</span></div>
-  </div>
+  <dl class="stats" aria-label="Datos rápidos">
+    <div class="stat reveal"><dt data-count="4" data-prefix="+">+4</dt><dd>años de experiencia</dd></div>
+    <div class="stat reveal"><dt data-count="25" data-prefix="+">+25</dt><dd>diseños en el portafolio</dd></div>
+    <div class="stat txt reveal"><dt>ES · EN</dt><dd>atención en español e inglés</dd></div>
+    <div class="stat txt reveal"><dt>✓</dt><dd>bioseguridad por protocolo</dd></div>
+  </dl>
 
-  <section class="section about">
-    <div class="about-photo reveal" data-img="yadira-retrato">
-      <div class="ph-mini"><span class="ic">◇</span><small>Foto de Yadira<br>(retrato o trabajando)</small></div>
-    </div>
+  <section class="section about" aria-labelledby="about-h">
+    <figure class="about-photo reveal">
+      <img src="assets/img/yadira-retrato.jpg" alt="Retrato de Yadira Sayago" width="640" height="800" loading="lazy">
+    </figure>
     <div class="about-copy reveal">
-      <span class="eyebrow">Sobre Yadira</span>
-      <h2>Diseño hecho a tu medida</h2>
+      <p class="eyebrow">Sobre Yadira</p>
+      <h2 id="about-h">Diseño hecho a tu medida</h2>
       <p>Manicurista con más de 4 años de experiencia en salones de alto nivel de la Ciudad de México. Cada cita es personal: escucho lo que buscas y lo llevo a las uñas, desde algo clásico y pulido hasta un diseño de autor.</p>
       <p>Trabajo con protocolo de higiene y bioseguridad, atiendo en español e inglés, y hoy también capacito y lidero al equipo de manicuristas donde trabajo.</p>
       <a class="btn btn-ghost" href="servicios.html">Ver servicios</a>
     </div>
   </section>
 
-  <section class="section teaser" style="padding-top:0">
-    <div class="head-block reveal" style="margin-bottom:32px">
-      <span class="eyebrow">Una probada</span>
-      <h2>Diseños recientes</h2>
-    </div>
-    <div class="grid teaser-grid" id="teaserGrid"></div>
-    <div class="reveal" style="margin-top:34px;text-align:center">
-      <a class="btn btn-primary" href="portafolio.html"><span>Ver portafolio completo</span></a>
-    </div>
+  <section class="section teaser" aria-labelledby="teaser-h" style="padding-top:0">
+    <header class="head-block reveal" style="margin-bottom:32px">
+      <p class="eyebrow">Una probada</p>
+      <h2 id="teaser-h">Diseños recientes</h2>
+    </header>
+    <ul class="grid teaser-grid">
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/cat-eye-y-flor.jpg" alt="Diseño de uñas: Cat eye y flor" loading="lazy" width="440" height="550"><figcaption>Cat eye y flor</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/efecto-aurora.jpg" alt="Diseño de uñas: Efecto aurora" loading="lazy" width="440" height="550"><figcaption>Efecto aurora</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/muneca-y-flores.jpg" alt="Diseño de uñas: Muñeca y flores" loading="lazy" width="440" height="550"><figcaption>Muñeca y flores</figcaption></figure>
+      </li>
+      <li class="cell" data-cat="nailart" data-label="Nail Art">
+        <figure class="tile"><img src="assets/img/nail-art/press-on-con-blooming.jpg" alt="Diseño de uñas: Press on con blooming" loading="lazy" width="440" height="550"><figcaption>Press on con blooming</figcaption></figure>
+      </li>
+    </ul>
+    <p class="center reveal" style="margin-top:34px"><a class="btn btn-primary" href="portafolio.html"><span>Ver portafolio completo</span></a></p>
   </section>
 </main>
-
-<div class="marquee"><div class="marquee-track">
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
 </div></div>
-
-<footer>
-  <div class="brand">Luucyy Nails<small>by Yadira Sayago</small></div>
-  <div class="fnav">
-    <a href="index.html">Inicio</a><a href="portafolio.html">Portafolio</a>
-    <a href="servicios.html">Servicios</a><a href="prensa.html">Prensa</a><a href="agenda.html">Agenda</a>
-  </div>
-  <div class="fine">Ciudad de México · Manicura profesional</div>
+<footer class="foot">
+  <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
+  <nav aria-label="Pie de página"><ul>
+    <li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li>
+    <li><a href="servicios.html">Servicios</a></li><li><a href="prensa.html">Prensa</a></li><li><a href="agenda.html">Agenda</a></li>
+  </ul></nav>
+  <p class="fine">Ciudad de México · Manicura profesional</p>
 </footer>
-
 <div class="dock" id="dock">
-  <a class="btn fab fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
-  <a class="btn btn-primary fab" href="agenda.html"><span>Agendar</span></a>
+  <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+  <a class="btn btn-primary" href="agenda.html"><span>Agendar</span></a>
 </div>
-
-<div class="lb" id="lb">
-  <div class="lb-card">
-    <div class="pic"><button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button></div>
-    <div class="info">
-      <span class="eyebrow" id="lbCat">Categoría</span>
-      <h3 id="lbName">Nombre</h3>
-      <p>Aquí irá la foto real de esta pieza. En la versión final cada recuadro se reemplaza por la imagen correspondiente de la carpeta.</p>
-    </div>
-  </div>
-</div>
-
+<dialog class="lb" id="lb">
+  <figure>
+    <button class="lb-close" aria-label="Cerrar">✕</button>
+    <img src="" alt="">
+    <figcaption class="info">
+      <span class="eyebrow">Categoría</span>
+      <h3>Nombre</h3>
+      <p>Foto del portafolio de Yadira Sayago.</p>
+    </figcaption>
+  </figure>
+</dialog>
 <script src="assets/app.js"></script>
 </body>
 </html>
