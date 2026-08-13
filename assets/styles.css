@@ -1,19 +1,39 @@
 /* ===========================================================
    Luucyy Nails · estilos
+   Brand Kit v1 — cada color en su rol:
+
+   #FFFDF6 warm white .... lienzo principal de las páginas
+   #EDE8D0 cream ......... fondo de secciones y bloques
+   #FFF8D2 lemon ......... fondo suave de TARJETAS
+   #FFD7E9 petal ......... fondo de tarjeta y secciones delicadas
+   #FDDF85 jasmine ....... bloques, franjas y detalles de marca
+   #EB89B5 pink .......... etiquetas, rellenos y realces
+   #B83A6E raspberry ..... botones y enlaces
+   #3E2233 ink ........... texto, iconos y CONTORNOS · ancla oscura
+
    Display: Fraunces · Cuerpo: Jost
    =========================================================== */
 :root{
-  --ink:#2E1622; --wine:#7A2E4A; --rose:#C15A78; --rose-soft:#E8B7C4;
-  --petal:#F7EAEE; --cream:#FDF9F7; --champ:#C6A15B; --muted:#9A7C86;
-  --chrome:linear-gradient(115deg,#f5c6d8 0%,#e3c4ef 22%,#c3e9ea 46%,#f3e6c2 68%,#f0bcd2 88%,#dcc4ee 100%);
-  --shadow:0 24px 60px -28px rgba(46,22,34,.45);
+  --ink:#3E2233; --raspberry:#B83A6E;
+  --jasmine:#FDDF85; --lemon:#FFF8D2;
+  --pink:#EB89B5; --petal:#FFD7E9;
+  --cream:#EDE8D0; --white:#FFFDF6;
+  --muted:#6d5560;
+
+  /* contornos: ink diluido, nunca un gris neutro */
+  --line:rgba(62,34,51,.16);
+  --line-soft:rgba(62,34,51,.1);
+  /* la firma de marca: amarillo · rosa · frambuesa */
+  --rule:linear-gradient(90deg,var(--jasmine) 0 40%,var(--pink) 40% 70%,var(--raspberry) 70% 100%);
+  --shadow:0 24px 60px -30px rgba(62,34,51,.38);
+
   --serif:"Fraunces",Georgia,serif; --sans:"Jost",system-ui,sans-serif;
   --maxw:1240px;
   --hero-focus:center center;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.005em;
   font-optical-sizing:auto;font-variation-settings:"wght" 600,"opsz" 42}
@@ -22,209 +42,265 @@ img{max-width:100%;display:block}
 ul{list-style:none}
 button{font:inherit}
 
-.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.32em;
-  text-transform:uppercase;color:var(--rose)}
+.eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--raspberry)}
 .center{text-align:center}
 
-.chrome{background:var(--chrome);background-size:280% 280%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
-@keyframes sheen{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.name-accent{display:inline-block;padding-bottom:.08em;line-height:1.5;
-  background:linear-gradient(115deg,#7A2E4A,#C15A78 45%,#A06A3C 70%,#7A2E4A);
-  -webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;
-  font-variation-settings:"wght" 600,"opsz" 40}
+/* firma de marca · detalle jasmine→pink→raspberry */
+.rule{height:8px;width:112px;border-radius:8px;background:var(--rule);margin:0 0 20px}
+.rule.sm{height:6px;width:80px;margin-bottom:16px}
+
+/* el apellido en itálica frambuesa, como el logotipo del manual */
+.name-accent{font-style:italic;color:var(--raspberry);font-variation-settings:"wght" 600,"opsz" 40}
+
+/* etiqueta · relleno rosa, texto ink (rol de Pink Carnation) */
+/* el contorno ink define la forma: sobre el lienzo claro, el jasmine solo da 1.28:1 */
+.tag{display:inline-flex;align-items:center;font-family:var(--sans);font-size:.74rem;font-weight:600;
+  letter-spacing:.06em;padding:6px 14px;border-radius:999px;background:var(--pink);color:var(--ink);
+  border:1px solid var(--line)}
+.tag.y{background:var(--jasmine)}
+
+/* secciones y bloques · crema; delicadas · petal */
+.band--cream{background:var(--cream)}
+.band--petal{background:var(--petal)}
+/* en crema, raspberry se queda a 4.4:1 — el manual pide ink */
+.band--cream .eyebrow{color:var(--ink)}
 
 /* ---- HEADER / NAV ---- */
 .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;gap:20px;justify-content:space-between;
-  padding:20px clamp(20px,5vw,64px);transition:.4s ease;background:transparent}
-.nav.scrolled{background:rgba(253,249,247,.85);backdrop-filter:blur(14px);padding-top:14px;padding-bottom:14px;box-shadow:0 1px 0 rgba(122,46,74,.08)}
+  padding:20px clamp(20px,5vw,64px);transition:.35s ease;background:transparent}
+.nav.scrolled{background:rgba(255,253,246,.94);backdrop-filter:blur(14px);padding-top:13px;padding-bottom:13px;
+  border-bottom:1px solid var(--line)}
 .brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1;letter-spacing:.01em;
   font-variation-settings:"wght" 600,"opsz" 30}
-.brand small{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:block;margin-top:3px;font-weight:500}
+/* sobre el lienzo claro NO puede ir en jasmine (1.28:1); raspberry es el tono
+   cálido de marca que sí pasa (5.33:1). En el footer sí va jasmine: 10.85:1 */
+.brand small{font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--raspberry);display:block;margin-top:3px;font-weight:600}
 .nav nav{margin-left:auto}
 .links{display:flex;align-items:center;gap:30px}
-.links a{font-size:.82rem;letter-spacing:.06em;color:var(--ink);position:relative;padding:4px 0;opacity:.75;transition:.25s}
+.links a{font-size:.82rem;letter-spacing:.06em;color:var(--ink);position:relative;padding:4px 0;opacity:.72;transition:.25s}
 .links a:hover{opacity:1}
-.links a[aria-current]{opacity:1;color:var(--wine)}
-.links a[aria-current]:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--chrome);background-size:200% 200%;border-radius:2px}
+.links a[aria-current]{opacity:1;font-weight:500}
+/* detalle de marca: bloque jasmine bajo la página activa */
+.links a[aria-current]:not(.btn)::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-3px;height:9px;
+  background:var(--jasmine);border-radius:3px;z-index:-1}
+.links a[aria-current]{isolation:isolate}
 .nav-cta-mobile{display:none}
 
+/* ---- BOTONES · raspberry es el color de acción ---- */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.82rem;letter-spacing:.06em;
-  font-weight:500;padding:12px 26px;border-radius:999px;cursor:pointer;border:none;transition:.3s ease;white-space:nowrap}
-.btn-primary{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
-.btn-primary::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--chrome);background-size:220% 220%;opacity:0;transition:.35s}
-.btn-primary:hover::before{opacity:1;animation:sheen 3s linear infinite}
-.btn-primary:hover{color:var(--ink)}
-.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(122,46,74,.28)}
-.btn-ghost:hover{border-color:var(--wine);background:rgba(122,46,74,.05)}
+  font-weight:500;padding:13px 28px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:.28s ease;white-space:nowrap}
+.btn-primary{background:var(--raspberry);color:#fff;border-color:var(--raspberry)}
+.btn-primary:hover{background:var(--ink);border-color:var(--ink)}
+.btn-ink{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ink:hover{background:var(--raspberry);border-color:var(--raspberry)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(62,34,51,.32)}
+.btn-ghost:hover{background:var(--jasmine);border-color:var(--ink)}
 .nav-cta{flex:none}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
 
-/* ---- SECTIONS ---- */
-.section{padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);max-width:var(--maxw);margin:0 auto}
-.section.first{padding-top:clamp(120px,15vh,180px)}
-.head-block{max-width:640px;margin-bottom:56px}
-.head-block h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:14px 0 16px}
+/* ---- SECCIONES ---- */
+.section{padding:clamp(64px,9vw,116px) clamp(20px,5vw,64px);max-width:var(--maxw);margin:0 auto}
+.section.first{padding-top:clamp(116px,14vh,168px)}
+.band + .section{padding-top:clamp(56px,7vw,88px)}
+.head-block{max-width:640px;margin-bottom:52px}
+.head-block h2{font-size:clamp(2.2rem,5vw,3.5rem);margin:12px 0 16px}
 .head-block p{color:var(--muted);font-size:1.02rem}
 
-/* ---- HERO ---- */
-.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,60px);
-  align-items:center;padding:clamp(120px,16vh,150px) clamp(20px,5vw,64px) 60px;max-width:1300px;margin:0 auto}
-.hero-copy .eyebrow{display:block;margin-bottom:22px}
-.hero-copy h1{font-size:clamp(3.2rem,8vw,6rem);letter-spacing:-.015em;margin-bottom:8px;padding-bottom:.06em;
+/* ---- HERO · lienzo blanco, el amarillo entra como BLOQUE ---- */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);
+  align-items:center;padding:clamp(116px,15vh,150px) clamp(20px,5vw,64px) clamp(64px,8vw,96px);
+  max-width:1300px;margin:0 auto}
+.hero-copy .eyebrow{display:block;margin-bottom:18px}
+.hero-copy h1{font-size:clamp(3.2rem,8vw,5.8rem);letter-spacing:-.015em;margin-bottom:6px;padding-bottom:.06em;
   font-variation-settings:"wght" 600,"opsz" 40}
-.hero-copy .lead{max-width:440px;color:#5a3b47;font-size:1.08rem;margin:26px 0 34px}
+.hero-copy .lead{max-width:430px;color:var(--muted);font-size:1.06rem;margin:24px 0 30px}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-visual{margin:0;position:relative;width:min(100%,560px);justify-self:end;aspect-ratio:3/4;
-  border-radius:200px 200px 24px 24px;overflow:hidden;background:var(--petal);box-shadow:var(--shadow)}
-.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:var(--hero-focus)}
+/* bloque jasmine sólido desplazado: el "detalle de marca" que enmarca la foto */
+.hero-visual{margin:0;position:relative;width:min(100%,500px);justify-self:end;aspect-ratio:3/4}
+.hero-visual::before{content:"";position:absolute;inset:26px -26px -26px 26px;background:var(--jasmine);
+  border-radius:180px 180px 20px 20px}
+.hero-visual img{position:relative;width:100%;height:100%;object-fit:cover;object-position:var(--hero-focus);
+  border-radius:180px 180px 20px 20px;border:1px solid var(--line)}
 
-/* ---- STATS (dl) ---- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);
-  border-top:1px solid rgba(122,46,74,.16);border-bottom:1px solid rgba(122,46,74,.16);
-  padding:clamp(44px,6vw,72px) clamp(20px,5vw,64px);max-width:var(--maxw);margin:0 auto}
-.stat dt{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:600;color:var(--wine);
+/* ---- STATS · bloque crema con contornos ink ---- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.stats-wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(44px,6vw,72px) clamp(20px,5vw,64px)}
+.stat{background:var(--cream);padding:6px clamp(14px,2vw,28px)}
+.stat dt{font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,4rem);font-weight:600;color:var(--ink);
   line-height:1;letter-spacing:-.01em;font-variation-settings:"wght" 600,"opsz" 28}
-.stat.txt dt{font-size:clamp(2rem,4.2vw,3.1rem)}
-.stat dd{font-size:.92rem;color:var(--muted);margin-top:14px;max-width:180px}
+.stat.txt dt{font-size:clamp(1.9rem,3.8vw,2.8rem)}
+.stat dd{font-size:.9rem;color:var(--muted);margin-top:12px;max-width:190px}
+/* barrita de marca sobre cada dato: en crema, el jasmine solo daría 1.06:1 —
+   el degradado aporta el rosa y la frambuesa que sí se ven */
+.stat::before{content:"";display:block;width:34px;height:6px;border-radius:6px;background:var(--rule);margin-bottom:20px}
 
 /* ---- ABOUT ---- */
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,56px);align-items:center}
-.about-photo{margin:0;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--petal);box-shadow:var(--shadow)}
-.about-photo img{width:100%;height:100%;object-fit:cover}
-.about-copy h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:14px 0 16px}
-.about-copy p{color:#5a3b47;margin-bottom:14px;max-width:520px}
-.about-copy .btn{margin-top:10px}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,60px);align-items:center}
+.about-photo{margin:0;position:relative;aspect-ratio:4/5}
+.about-photo::before{content:"";position:absolute;inset:-20px 20px 20px -20px;background:var(--petal);border-radius:18px}
+.about-photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
+.about-copy h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 16px}
+.about-copy p{color:var(--muted);margin-bottom:14px;max-width:520px}
+.about-copy .btn{margin-top:12px}
 
-/* ---- GALLERY ---- */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;padding:0}
-.chip{font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;padding:9px 18px;border-radius:999px;
-  border:1px solid rgba(122,46,74,.24);background:transparent;color:var(--wine);cursor:pointer;transition:.25s}
-.chip:hover{background:rgba(193,90,120,.1)}
-.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* ---- GALERÍA · fotos protagonistas, la paleta las enmarca ---- */
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:34px;padding:0}
+.chip{font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.04em;padding:9px 18px;border-radius:999px;
+  border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:.22s}
+.chip:hover{background:var(--lemon);border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--jasmine);color:var(--ink);border-color:var(--ink);font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
 .teaser-grid{grid-template-columns:repeat(4,1fr)}
 .cell{transition:.4s cubic-bezier(.2,.7,.2,1)}
 .cell.hide{display:none}
-.tile{margin:0;cursor:zoom-in;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.tile{margin:0;cursor:zoom-in;transition:.35s cubic-bezier(.2,.7,.2,1)}
 .tile img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:var(--petal);
-  box-shadow:0 12px 30px -18px rgba(46,22,34,.5);color:transparent;font-size:0}
-.tile figcaption{font-family:var(--serif);font-size:1.02rem;font-weight:500;margin-top:12px;color:var(--ink)}
+  border:1px solid var(--line);color:transparent;font-size:0}
+.tile figcaption{font-family:var(--serif);font-size:1rem;font-weight:500;margin-top:11px;color:var(--ink)}
 .tile:hover{transform:translateY(-4px)}
+.tile:hover img{border-color:var(--ink)}
 
-/* ---- SERVICES ---- */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(122,46,74,.14);
-  border:1px solid rgba(122,46,74,.14);border-radius:20px;overflow:hidden}
-.svc{background:var(--cream);padding:34px 30px;transition:.35s}
-.svc:hover{background:var(--petal)}
-.svc .n{font-family:var(--serif);font-size:1.05rem;color:var(--rose);font-style:italic;font-weight:500;display:block;margin-bottom:14px}
-.svc h3{font-size:1.35rem;margin-bottom:10px}
-.svc p{color:var(--muted);font-size:.94rem}
-.badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
-.badge{display:inline-flex;align-items:center;gap:9px;font-size:.85rem;color:var(--wine);
-  border:1px solid rgba(122,46,74,.24);border-radius:999px;padding:10px 20px}
-.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--chrome);background-size:200% 200%}
+/* ---- SERVICIOS · tarjetas lemon/petal con contorno ink ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--lemon);border:1px solid var(--line);padding:30px 28px 32px;border-radius:20px;transition:.3s}
+.svc:nth-child(3n+2){background:var(--petal)}
+.svc:hover{border-color:var(--ink);transform:translateY(-3px)}
+/* el número va en ink: sobre la tarjeta petal, un jasmine daría 1.00:1 */
+.svc .n{display:inline-flex;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.1em;
+  background:var(--ink);color:var(--white);padding:5px 12px;border-radius:999px;margin-bottom:16px}
+.svc h3{font-size:1.3rem;margin-bottom:9px}
+.svc p{color:var(--muted);font-size:.93rem}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:.83rem;font-weight:500;color:var(--ink);
+  background:var(--jasmine);border:1px solid var(--line);border-radius:999px;padding:10px 20px}
+.badge.alt{background:var(--pink)}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink)}
 
 /* ---- PRENSA ---- */
-.press-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);align-items:center}
-.press-hero h2{font-size:clamp(2rem,4.5vw,3.2rem);margin:14px 0 18px}
-.press-hero p{color:var(--muted);margin-bottom:14px}
-.tv-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.1rem;color:var(--wine)}
-.press-figure{margin:0;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--petal)}
-.press-figure img{width:100%;height:100%;object-fit:cover}
-.press-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.press-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,54px);align-items:center}
+.press-hero h2{font-size:clamp(2rem,4.5vw,3.1rem);margin:12px 0 18px}
+.press-hero p{color:var(--muted);margin-bottom:16px}
+.press-figure{margin:0;position:relative;aspect-ratio:4/3}
+.press-figure::before{content:"";position:absolute;inset:22px -22px -22px 22px;background:var(--jasmine);border-radius:16px}
+.press-figure img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.press-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .press-shots .tile img{aspect-ratio:3/4}
 
 /* ---- AGENDA ---- */
-.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:stretch}
-.book .intro h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:14px 0 18px}
-.book .intro p{color:var(--muted);margin-bottom:28px;max-width:380px}
-.contact-row{font-style:normal;display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.contact-row a{display:flex;align-items:center;gap:14px;font-size:.98rem;color:var(--ink);transition:.25s}
-.contact-row a:hover{color:var(--rose)}
-.contact-row .k{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--petal);font-size:.9rem;flex:none}
-.cal{background:var(--ink);border-radius:24px;padding:clamp(28px,4vw,44px);color:var(--petal);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;min-height:360px}
-.cal::before{content:"";position:absolute;top:-40%;right:-20%;width:70%;height:80%;background:var(--chrome);background-size:200% 200%;filter:blur(40px);opacity:.5;animation:sheen 10s ease-in-out infinite}
-.cal>*{position:relative;z-index:1}
-.cal .eyebrow{color:var(--rose-soft)}
-.cal h3{color:#fff;font-size:1.9rem;margin:12px 0 10px}
-.cal p{color:rgba(247,234,238,.72);font-size:.92rem;margin-bottom:26px}
-.cal .fake{border:1px dashed rgba(247,234,238,.35);border-radius:14px;padding:22px;margin-bottom:22px;font-size:.85rem;color:rgba(247,234,238,.7)}
-.cal .fake b{color:#fff;font-family:var(--serif);font-style:italic;font-weight:500}
+.book{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,56px);align-items:start}
+.book .intro h2{font-size:clamp(2.2rem,5vw,3.3rem);margin:12px 0 18px}
+.book .intro p{color:var(--muted);margin-bottom:26px;max-width:380px}
+.contact-row{font-style:normal;display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.contact-row a{display:flex;align-items:center;gap:14px;font-size:.96rem;color:var(--ink);
+  border:1px solid var(--line);border-radius:14px;padding:12px 16px;transition:.25s}
+.contact-row a:hover{background:var(--lemon);border-color:var(--ink)}
+/* iconos en ink sobre círculo jasmine */
+.contact-row .k{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--jasmine);
+  color:var(--ink);font-size:.9rem;flex:none}
+/* tarjeta de reserva · fondo suave lemon, contorno ink */
+.cal{background:var(--lemon);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,34px);
+  color:var(--ink);display:flex;flex-direction:column}
+.cal h3{font-size:1.8rem;margin:10px 0 8px}
+.cal p{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+.cal .calendly-inline-widget{border-radius:14px;overflow:hidden;background:var(--white);border:1px solid var(--line)}
+.cal .btn{align-self:flex-start;margin-top:20px}
 
-/* ---- FOOTER ---- */
-.foot{background:var(--ink);color:var(--petal);padding:60px clamp(20px,5vw,64px);text-align:center}
-.foot .brand{color:#fff;font-size:1.6rem}
-.foot .brand small{color:var(--rose-soft)}
-.foot nav ul{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:26px 0;font-size:.85rem}
-.foot nav a{opacity:.75}
-.foot nav a:hover{opacity:1}
-.foot .fine{font-size:.75rem;color:rgba(247,234,238,.5);letter-spacing:.04em}
-
-/* ---- MARQUEE (decorativo) ---- */
-.marquee{background:var(--ink);color:var(--petal);overflow:hidden;white-space:nowrap;padding:16px 0}
+/* ---- MARQUEE · la franja jasmine ---- */
+.marquee{background:var(--jasmine);color:var(--ink);overflow:hidden;white-space:nowrap;padding:15px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .marquee-track{display:inline-flex;gap:40px;animation:slide 26s linear infinite}
-.marquee span{font-family:var(--serif);font-style:italic;font-size:1.1rem;font-variation-settings:"wght" 500,"opsz" 36}
-.marquee .dot{color:var(--rose);font-style:normal}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:1.08rem;font-variation-settings:"wght" 500,"opsz" 36}
+.marquee .dot{color:var(--raspberry);font-style:normal}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* ---- FOOTER · ancla oscura de la marca ---- */
+/* sin franja decorativa aquí: el marquee jasmine ya es la franja, y su borde
+   contra el ink (10.85:1) es corte suficiente. Dos franjas seguidas se comían entre sí. */
+.foot{background:var(--ink);color:var(--petal)}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:clamp(28px,5vw,64px);
+  max-width:var(--maxw);margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,5vw,64px) clamp(36px,4vw,52px)}
+.foot .brand{color:#fff;font-size:1.7rem}
+.foot .brand small{color:var(--jasmine)}
+.foot-pitch{color:rgba(255,215,233,.72);font-size:.92rem;margin:16px 0 24px;max-width:300px}
+.foot-h{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--jasmine);margin-bottom:18px}
+.foot-col ul{display:flex;flex-direction:column;gap:11px;font-size:.9rem}
+.foot-col a{color:rgba(255,215,233,.8);transition:.22s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,215,233,.18);max-width:var(--maxw);margin:0 auto;
+  padding:22px clamp(20px,5vw,64px) 30px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot .fine{font-size:.74rem;color:rgba(255,215,233,.5);letter-spacing:.04em}
+
 /* ---- DOCK ---- */
-.dock{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;flex-direction:column;gap:12px;
+.dock{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;flex-direction:column;gap:10px;
   opacity:0;transform:translateY(20px);transition:.4s;pointer-events:none}
 .dock.show{opacity:1;transform:none;pointer-events:auto}
-.dock .btn{box-shadow:var(--shadow)}
-.fab-wa{background:#25623f;color:#fff}
-.fab-wa:hover{background:#1f5334;color:#fff}
+/* el dock flota sobre lienzo claro Y sobre el footer ink: el aro warm white
+   lo despega del oscuro (ink sobre ink daba 1.00:1) sin notarse en lo claro */
+.dock .btn{border-color:var(--ink);box-shadow:0 0 0 2px var(--white),var(--shadow)}
+.fab-wa{background:var(--jasmine);color:var(--ink)}
+.fab-wa:hover{background:var(--ink);color:var(--white)}
 
 /* ---- LIGHTBOX (dialog) ---- */
-.lb{border:none;padding:0;width:min(760px,calc(100% - 32px));max-width:760px;max-height:92svh;
-  border-radius:20px;background:var(--cream);box-shadow:var(--shadow);overflow:auto}
-.lb::backdrop{background:rgba(28,12,18,.78);backdrop-filter:blur(6px)}
+/* margin:auto lo recentra: el reset `*{margin:0}` mata el default del <dialog> */
+.lb{border:1px solid var(--line);padding:0;margin:auto;width:min(760px,calc(100% - 32px));max-width:760px;
+  max-height:92svh;border-radius:20px;background:var(--white);box-shadow:var(--shadow);overflow:auto}
+.lb::backdrop{background:rgba(62,34,51,.82);backdrop-filter:blur(6px)}
 .lb figure{margin:0;position:relative}
-.lb img{width:100%;height:auto;max-height:72svh;object-fit:contain;background:#1d1117}
-.lb .info{padding:22px 24px}
-.lb .info .eyebrow{margin-bottom:8px;display:block}
-.lb .info h3{font-size:1.4rem;margin-bottom:6px}
-.lb .info p{color:var(--muted);font-size:.88rem}
-.lb-close{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:none;
-  background:rgba(253,249,247,.94);cursor:pointer;font-size:1.1rem;color:var(--ink);box-shadow:0 6px 18px rgba(28,12,18,.18)}
-.tile:focus-visible{outline:3px solid var(--rose);outline-offset:5px;border-radius:14px}
+.lb img{width:100%;height:auto;max-height:70svh;object-fit:contain;background:var(--ink)}
+.lb .info{padding:20px 24px 24px;background:var(--lemon);border-top:1px solid var(--line)}
+.lb .info .eyebrow{margin-bottom:7px;display:block}
+.lb .info h3{font-size:1.35rem;margin-bottom:5px}
+.lb .info p{color:var(--muted);font-size:.87rem}
+.lb-close{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--ink);background:var(--jasmine);cursor:pointer;font-size:1.05rem;color:var(--ink)}
+.tile:focus-visible{outline:3px solid var(--raspberry);outline-offset:5px;border-radius:14px}
 
 /* ---- REVEAL ---- */
-.reveal{opacity:0;transform:translateY(26px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal{opacity:0;transform:translateY(24px);transition:.75s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
 /* ---- RESPONSIVE ---- */
 @media(max-width:1000px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto;gap:36px}
-  .hero-visual{max-width:460px;margin:0 auto;width:100%;justify-self:center}
-  .stats{grid-template-columns:repeat(2,1fr);gap:34px 24px}
+  .hero{grid-template-columns:1fr;min-height:auto;gap:52px}
+  .hero-visual{max-width:400px;margin:0 auto;width:100%;justify-self:center}
+  .hero-visual::before{inset:20px -20px -20px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
   .press-hero,.book{grid-template-columns:1fr}
   .about{grid-template-columns:1fr}
-  .about-photo{max-width:340px;margin:0 auto;width:100%}
+  .about-photo{max-width:320px;margin:0 auto 0 20px;width:100%}
   .teaser-grid{grid-template-columns:1fr 1fr}
   .nav nav{margin-left:0}
   .links{display:none}
-  .links.open{display:flex;position:fixed;top:62px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
-    background:rgba(253,249,247,.98);backdrop-filter:blur(14px);padding:12px 24px 24px;box-shadow:var(--shadow)}
+  .links.open{display:flex;position:fixed;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--white);padding:10px 24px 24px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
   .links.open li{padding:0}
-  .links.open a{display:block;padding:14px 0;border-bottom:1px solid rgba(122,46,74,.1);font-size:1rem}
+  .links.open a{display:block;padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:1rem;opacity:1}
+  .links.open a[aria-current]:not(.btn)::after{display:none}
+  .links.open a[aria-current]{color:var(--raspberry)}
   .links.open .nav-cta-mobile{display:block;margin-top:16px}
   .links.open .nav-cta-mobile a{border:none;justify-content:center}
-  .links.open .nav-cta-mobile a.btn-primary{display:flex;align-items:center;justify-content:center;width:100%;padding:12px 26px;border:0;background:var(--ink);color:#fff;opacity:1}
-  .links.open .nav-cta-mobile a.btn-primary span{color:inherit}
-  .links.open .nav-cta-mobile a.btn-primary:hover,
-  .links.open .nav-cta-mobile a.btn-primary:focus-visible{color:var(--ink)}
+  .links.open .nav-cta-mobile a.btn-primary{display:flex;align-items:center;justify-content:center;width:100%;
+    padding:13px 28px;background:var(--raspberry);color:#fff;opacity:1}
   .nav-cta{display:none}
   .burger{display:flex}
 }
+@media(max-width:620px){
+  .foot-top{grid-template-columns:1fr;gap:34px}
+}
 @media(max-width:560px){
   .svc-grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr 1fr}
   .press-shots{grid-template-columns:1fr 1fr}
   .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .about-photo{margin-left:16px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}

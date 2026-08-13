@@ -29,9 +29,13 @@
 <main>
   <section class="hero" aria-label="Presentación">
     <div class="hero-copy">
+      <div class="rule reveal" aria-hidden="true"></div>
       <p class="eyebrow reveal">Manicurista de alto nivel · CDMX</p>
-      <h1 class="reveal">Yadira <span class="it name-accent">Sayago</span></h1>
+      <h1 class="reveal">Yadira <span class="name-accent">Sayago</span></h1>
       <p class="lead reveal">Manicura de precisión y nail art. Más de 4 años creando uñas que se llevan como una joya, con atención también en inglés.</p>
+      <p class="hero-tags reveal">
+        <span class="tag y">Nail art</span><span class="tag">Chrome</span><span class="tag y">Acrílico</span><span class="tag">Gelish</span>
+      </p>
       <p class="hero-cta reveal">
         <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
         <a class="btn btn-ghost" href="portafolio.html">Ver portafolio</a>
@@ -42,28 +46,35 @@
     </figure>
   </section>
 
-  <dl class="stats" aria-label="Datos rápidos">
-    <div class="stat reveal"><dt data-count="4" data-prefix="+">+4</dt><dd>años de experiencia</dd></div>
-    <div class="stat reveal"><dt data-count="25" data-prefix="+">+25</dt><dd>diseños en el portafolio</dd></div>
-    <div class="stat txt reveal"><dt>ES · EN</dt><dd>atención en español e inglés</dd></div>
-    <div class="stat txt reveal"><dt>✓</dt><dd>bioseguridad por protocolo</dd></div>
-  </dl>
+  <div class="band band--cream">
+    <div class="stats-wrap">
+      <dl class="stats" aria-label="Datos rápidos">
+        <div class="stat reveal"><dt data-count="4" data-prefix="+">+4</dt><dd>años de experiencia</dd></div>
+        <div class="stat reveal"><dt data-count="25" data-prefix="+">+25</dt><dd>diseños en el portafolio</dd></div>
+        <div class="stat txt reveal"><dt>ES · EN</dt><dd>atención en español e inglés</dd></div>
+        <div class="stat txt reveal"><dt>✓</dt><dd>bioseguridad por protocolo</dd></div>
+      </dl>
+    </div>
+  </div>
 
   <section class="section about" aria-labelledby="about-h">
     <figure class="about-photo reveal">
       <img src="assets/img/yadira-retrato.jpg" alt="Retrato de Yadira Sayago" width="640" height="800" loading="lazy">
     </figure>
     <div class="about-copy reveal">
+      <div class="rule sm" aria-hidden="true"></div>
       <p class="eyebrow">Sobre Yadira</p>
       <h2 id="about-h">Diseño hecho a tu medida</h2>
       <p>Manicurista con más de 4 años de experiencia en salones de alto nivel de la Ciudad de México. Cada cita es personal: escucho lo que buscas y lo llevo a las uñas, desde algo clásico y pulido hasta un diseño de autor.</p>
       <p>Trabajo con protocolo de higiene y bioseguridad, atiendo en español e inglés, y hoy también capacito y lidero al equipo de manicuristas donde trabajo.</p>
-      <a class="btn btn-ghost" href="servicios.html">Ver servicios</a>
+      <a class="btn btn-ink" href="servicios.html">Ver servicios</a>
     </div>
   </section>
 
-  <section class="section teaser" aria-labelledby="teaser-h" style="padding-top:0">
+  <div class="band band--cream">
+  <section class="section teaser" aria-labelledby="teaser-h">
     <header class="head-block reveal" style="margin-bottom:32px">
+      <div class="rule sm" aria-hidden="true"></div>
       <p class="eyebrow">Una probada</p>
       <h2 id="teaser-h">Diseños recientes</h2>
     </header>
@@ -83,6 +94,7 @@
     </ul>
     <p class="center reveal" style="margin-top:34px"><a class="btn btn-primary" href="portafolio.html"><span>Ver portafolio completo</span></a></p>
   </section>
+  </div>
 </main>
 <div class="marquee" aria-hidden="true"><div class="marquee-track">
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
@@ -91,12 +103,35 @@
   <span>Manicura de alto nivel <span class="dot">·</span> Diseño a tu medida <span class="dot">·</span> Atención en español e inglés <span class="dot">✦</span> Ciudad de México <span class="dot">·</span> </span>
 </div></div>
 <footer class="foot">
-  <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
-  <nav aria-label="Pie de página"><ul>
-    <li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li>
-    <li><a href="servicios.html">Servicios</a></li><li><a href="prensa.html">Prensa</a></li><li><a href="agenda.html">Agenda</a></li>
-  </ul></nav>
-  <p class="fine">Ciudad de México · Manicura profesional</p>
+  <div class="foot-top">
+    <div class="foot-col">
+      <p class="brand">Luucyy Nails<small>by Yadira Sayago</small></p>
+      <p class="foot-pitch">Manicura de precisión y nail art en la Ciudad de México. Diseño hecho a tu medida, con atención en español e inglés.</p>
+      <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
+    </div>
+    <nav class="foot-col" aria-label="Pie de página">
+      <p class="foot-h">Navegación</p>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="prensa.html">Prensa</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+      </ul>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-h">Contacto</p>
+      <ul>
+        <li><a href="https://wa.me/525528695896" target="_blank" rel="noopener">WhatsApp · 55 2869 5896</a></li>
+        <li><a href="https://instagram.com/luucyy_nails" target="_blank" rel="noopener">Instagram · @luucyy_nails</a></li>
+        <li><a href="mailto:yadira.sayago.1503@gmail.com">yadira.sayago.1503@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="fine">© 2026 Luucyy Nails · Ciudad de México</p>
+    <p class="fine">Manicura profesional · ES · EN</p>
+  </div>
 </footer>
 <div class="dock" id="dock">
   <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
