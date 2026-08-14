@@ -31,9 +31,35 @@ un rol y no se usa fuera de él.
 | `--petal` | `#FFD7E9` | Rosa suave · tarjetas y secciones delicadas |
 | `--olive` | `#9F8F65` | Tierra · **solo decorativo**, nunca lleva texto |
 | `--ink` | `#3E2233` | Todo el texto · ancla oscura |
-| `--raspberry` | `#B83A6E` | Botones y enlaces (hover `--raspberry-dark`) |
+| `--raspberry` | `#B83A6E` | Solo el logotipo ("Nails") y su tramo de `.rule` |
 | `--mint` | `#F2FEDC` | Fondo alterno para separar secciones |
-| `--olive-deep` | `#6F6240` | Bloque oscuro cálido que sí admite texto blanco |
+| `--olive-deep` | `#6F6240` | Acento principal: botones, rótulos y texto de acento |
+
+### Verde en lugar de rosa
+
+**Olive Deep es el color de acción y de acento del sitio.** Lleva los botones,
+los rótulos (`.eyebrow`), el apellido del hero (`.name-accent`), los separadores
+del marquee y el borde de los botones fantasma. Mide más contraste que raspberry
+en todos los fondos claros —5.72 vs 5.17 sobre blanco cálido y mint, y 4.62 vs
+4.17 sobre petal, donde raspberry reprueba.
+
+El raspberry se retiró de la interfaz y quedó como color exclusivamente de
+identidad: el "Nails" del logotipo y su tramo en la barra de marca.
+
+El olivo claro `#9F8F65` **no sirve como texto** (3.03:1). Se queda en bordes,
+marcos, viñetas y el contorno de los botones fantasma.
+
+### Jerarquía de botones
+
+| Clase | Uso | Sobre fondo claro | Sobre fondo Ink |
+|---|---|---|---|
+| `.btn-primary` | Acción principal (Agendar cita) | Olive Deep, texto blanco | **Jasmine, texto Ink** |
+| `.btn-ghost` | Acción secundaria (Ver portafolio) | Contorno olivo, texto Ink | — |
+| `.btn-ink` | Alterno, disponible | Ink, texto blanco | — |
+
+El cambio a Jasmine sobre Ink no es decorativo: Olive Deep sobre Ink da **2.36:1**
+y el botón se perdería. Jasmine da 10.85:1 y cumple el "hace que el botón
+resalte" del manual 04. Aplica en el pie y en la tarjeta de agenda.
 
 ### Ritmo de secciones
 
@@ -55,7 +81,7 @@ marquee— van a filo limpio a propósito: deben leerse como franjas.
 
 - Todo el texto en Ink. Blanco solo sobre Ink, Olive Deep o Raspberry.
 - **Nunca texto sobre `--olive`**, en ningún color, ni texto escrito en olivo o amarillo.
-- Raspberry solo para botones y enlaces.
+- Raspberry solo en el logotipo; los acentos y botones van en Olive Deep.
 - El amarillo aparece una o dos veces por página, no más.
 - Nada de pastel sobre pastel.
 - Bordes y separadores: olivo al 25% (`--line`). Sombras siempre cálidas, nunca grises.
@@ -64,13 +90,12 @@ marquee— van a filo limpio a propósito: deben leerse como franjas.
 ### Dos apartes del manual
 
 1. La matriz publica **Raspberry sobre Petal como 4.5 AA**; el valor real es
-   **4.2:1**, que reprueba. Por eso en bloques petal el texto de acento va en Ink
-   (`.band--petal .eyebrow`).
+   **4.2:1**, que reprueba. Por eso los enlaces dentro de un bloque petal van en
+   Ink (`.band--petal .prose-link`). Los rótulos ya no lo necesitan desde que
+   pasaron a Olive Deep, que ahí mide 4.62:1.
 2. El manual se contradice con el olivo: la ficha y los "No" prohíben texto
    encima, pero el demo incluye una etiqueta olivo con texto. Aquí gana la regla
    escrita — el olivo es solo decorativo.
-
-`.btn-olive` está definido y disponible, pero hoy no se usa en ninguna página.
 
 ## Cambiar contenido
 

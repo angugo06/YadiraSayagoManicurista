@@ -56,8 +56,10 @@ button{font:inherit}
 /* foco de teclado · contorno Ink de 2px con 2px de separación (manual 04) */
 :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 
+/* los rótulos van en Olive Deep, no en raspberry: mide más contraste (5.72 vs
+   5.17) y deja el raspberry libre para su único trabajo, botones y enlaces */
 .eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.3em;
-  text-transform:uppercase;color:var(--raspberry)}
+  text-transform:uppercase;color:var(--olive-deep)}
 .center{text-align:center}
 /* enlaces de contenido · raspberry con subrayado (manual 04) */
 .prose-link{color:var(--raspberry);text-decoration:underline;text-underline-offset:3px}
@@ -90,15 +92,16 @@ button{font:inherit}
 /* cabecera de página: arranca sólida, no hay nada arriba que difuminar */
 .band--top{--fade-in:0px}
 /* medido: raspberry sobre petal da 4.2:1, por debajo de AA (el manual lo
-   publica como 4.5). En bloques petal el texto de acento va en Ink. */
-.band--petal .eyebrow,.band--petal .prose-link{color:var(--ink)}
+   publica como 4.5). Los enlaces dentro de un bloque petal van en Ink.
+   Los rótulos ya no lo necesitan: Olive Deep sobre petal da 4.62:1. */
+.band--petal .prose-link{color:var(--ink)}
 .band--ink{background:var(--ink);color:var(--white)}
 .band--ink h2,.band--ink h3{color:var(--white)}
 .band--ink .eyebrow{color:var(--jasmine)}
 .band--ink p{color:rgba(254,249,238,.75)}
 
 /* el apellido en cursiva, igual que "Nails" en el logotipo */
-.name-accent{font-style:italic;color:var(--raspberry);font-variation-settings:"wght" 600,"opsz" 40}
+.name-accent{font-style:italic;color:var(--olive-deep);font-variation-settings:"wght" 600,"opsz" 40}
 
 /* ---- HEADER / NAV ---- */
 .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;gap:20px;justify-content:space-between;
@@ -124,14 +127,18 @@ button{font:inherit}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.83rem;letter-spacing:.05em;
   font-weight:500;padding:13px 28px;border-radius:999px;cursor:pointer;border:1px solid transparent;
   transition:.26s ease;white-space:nowrap}
-.btn-primary{background:var(--raspberry);color:#fff;border-color:var(--raspberry)}
-.btn-primary:hover{background:var(--raspberry-dark);border-color:var(--raspberry-dark)}
+.btn-primary{background:var(--olive-deep);color:var(--white);border-color:var(--olive-deep)}
+.btn-primary:hover{background:var(--ink);border-color:var(--ink)}
+/* sobre fondo Ink el olivo se pierde (2.36:1): ahí el botón va en Jasmine,
+   que da 10.85:1 — es el "hace que el botón resalte" del manual 04 */
+.foot .btn-primary,.cal .btn-primary,.band--ink .btn-primary{
+  background:var(--jasmine);color:var(--ink);border-color:var(--jasmine)}
+.foot .btn-primary:hover,.cal .btn-primary:hover,.band--ink .btn-primary:hover{
+  background:var(--white);border-color:var(--white)}
 .btn-ink{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.btn-ink:hover{background:var(--raspberry);border-color:var(--raspberry);color:#fff}
-.btn-olive{background:var(--olive-deep);color:var(--white);border-color:var(--olive-deep)}
-.btn-olive:hover{background:var(--ink);border-color:var(--ink)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(62,34,51,.3)}
-.btn-ghost:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.btn-ink:hover{background:var(--olive-deep);border-color:var(--olive-deep);color:var(--white)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--olive)}
+.btn-ghost:hover{background:var(--olive-deep);color:var(--white);border-color:var(--olive-deep)}
 .nav-cta{flex:none}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
@@ -227,7 +234,7 @@ button{font:inherit}
 .contact-row{font-style:normal;display:flex;flex-direction:column;gap:10px;margin-top:24px}
 .contact-row a{display:flex;align-items:center;gap:14px;font-size:.96rem;color:var(--ink);
   border:1px solid var(--line);border-radius:14px;padding:12px 16px;transition:.25s}
-.contact-row a:hover{background:var(--mint);border-color:var(--olive)}
+.contact-row a:hover{background:var(--mint);border-color:var(--olive-deep);color:var(--olive-deep)}
 .contact-row .k{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--jasmine);
   color:var(--ink);font-size:.9rem;flex:none}
 .cal{background:var(--ink);border-radius:22px;padding:clamp(22px,3vw,34px);color:var(--white);
@@ -242,7 +249,7 @@ button{font:inherit}
 .marquee{background:var(--jasmine);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0}
 .marquee-track{display:inline-flex;gap:40px;animation:slide 26s linear infinite}
 .marquee span{font-family:var(--serif);font-style:italic;font-size:1.08rem;font-variation-settings:"wght" 500,"opsz" 36}
-.marquee .dot{color:var(--raspberry);font-style:normal}
+.marquee .dot{color:var(--olive-deep);font-style:normal}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---- FOOTER · Ink, cierra la página ---- */
@@ -311,11 +318,11 @@ button{font:inherit}
   .links.open li{padding:0}
   .links.open a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;opacity:1}
   .links.open a[aria-current]:not(.btn)::after{display:none}
-  .links.open a[aria-current]{color:var(--raspberry)}
+  .links.open a[aria-current]{color:var(--olive-deep)}
   .links.open .nav-cta-mobile{display:block;margin-top:16px}
   .links.open .nav-cta-mobile a{border:none;justify-content:center}
   .links.open .nav-cta-mobile a.btn-primary{display:flex;align-items:center;justify-content:center;width:100%;
-    padding:13px 28px;background:var(--raspberry);color:#fff;opacity:1}
+    padding:13px 28px;background:var(--olive-deep);color:var(--white);opacity:1}
   .nav-cta{display:none}
   .burger{display:flex}
 }
