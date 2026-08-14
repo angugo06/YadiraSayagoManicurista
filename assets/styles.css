@@ -1,31 +1,43 @@
 /* ===========================================================
    Luucyy Nails · estilos
-   Brand Kit v1 — cada color en su rol:
+   Manual de marca v2
 
-   #FFFDF6 warm white .... lienzo principal de las páginas
-   #EDE8D0 cream ......... fondo de secciones y bloques
-   #FFF8D2 lemon ......... fondo suave de TARJETAS
-   #FFD7E9 petal ......... fondo de tarjeta y secciones delicadas
-   #FDDF85 jasmine ....... bloques, franjas y detalles de marca
-   #EB89B5 pink .......... etiquetas, rellenos y realces
-   #B83A6E raspberry ..... botones y enlaces
-   #3E2233 ink ........... texto, iconos y CONTORNOS · ancla oscura
+   RITMO DE SECCIONES (manual 04) — de arriba a abajo:
+     Warm White  portada y contenido · fondo por defecto
+     Mint Cream  sección alterna · separa sin romper el tono
+     Jasmine     momento de marca · UNA franja fuerte por página
+     Petal Frost bloque delicado · servicios, testimonios, notas
+     Ink         agenda y pie · cierra la página
 
-   Display: Fraunces · Cuerpo: Jost
+   REGLAS QUE NO SE ROMPEN
+     · Todo el texto en Ink; blanco solo sobre Ink, Olive Deep o Raspberry.
+     · Nunca texto sobre Olive #9F8F65, en ningún color. Es solo decorativo.
+     · Nunca texto escrito en olivo ni en amarillo.
+     · Raspberry solo para botones y enlaces.
+     · El amarillo aparece una o dos veces por página, no más.
+     · Nada de pastel sobre pastel.
    =========================================================== */
 :root{
-  --ink:#3E2233; --raspberry:#B83A6E;
-  --jasmine:#FDDF85; --lemon:#FFF8D2;
-  --pink:#EB89B5; --petal:#FFD7E9;
-  --cream:#EDE8D0; --white:#FFFDF6;
-  --muted:#6d5560;
+  /* base */
+  --white:#FEF9EE;      /* lienzo principal */
+  --jasmine:#FDDF85;    /* amarillo protagonista */
+  --petal:#FFD7E9;      /* rosa suave */
+  --olive:#9F8F65;      /* tierra · SOLO decorativo, jamás con texto */
+  --ink:#3E2233;        /* todo el texto */
 
-  /* contornos: ink diluido, nunca un gris neutro */
-  --line:rgba(62,34,51,.16);
-  --line-soft:rgba(62,34,51,.1);
-  /* la firma de marca: amarillo · rosa · frambuesa */
-  --rule:linear-gradient(90deg,var(--jasmine) 0 40%,var(--pink) 40% 70%,var(--raspberry) 70% 100%);
-  --shadow:0 24px 60px -30px rgba(62,34,51,.38);
+  /* sistema */
+  --raspberry:#B83A6E;  /* botones y enlaces */
+  --raspberry-dark:#9D2F5C;
+  --mint:#F2FEDC;       /* fondo alterno */
+  --olive-deep:#6F6240; /* bloques oscuros con texto */
+
+  /* utilidades · bordes y separadores en olivo al 25% (manual 04) */
+  --line:rgba(159,143,101,.25);
+  --line-strong:rgba(159,143,101,.45);
+  /* sombras siempre cálidas, nunca grises (manual 04) */
+  --shadow:0 20px 50px -24px rgba(62,34,51,.35);
+  --shadow-photo:0 26px 54px -26px rgba(62,34,51,.45),0 6px 16px -10px rgba(62,34,51,.22);
+  --muted:#6d5560;
 
   --serif:"Fraunces",Georgia,serif; --sans:"Jost",system-ui,sans-serif;
   --maxw:1240px;
@@ -35,124 +47,144 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.005em;
-  font-optical-sizing:auto;font-variation-settings:"wght" 600,"opsz" 42}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em;
+  font-optical-sizing:auto;font-variation-settings:"wght" 600,"opsz" 40}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 ul{list-style:none}
 button{font:inherit}
+/* foco de teclado · contorno Ink de 2px con 2px de separación (manual 04) */
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 
-.eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.32em;
+.eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.3em;
   text-transform:uppercase;color:var(--raspberry)}
 .center{text-align:center}
+/* enlaces de contenido · raspberry con subrayado (manual 04) */
+.prose-link{color:var(--raspberry);text-decoration:underline;text-underline-offset:3px}
+.prose-link:hover{color:var(--raspberry-dark)}
 
-/* firma de marca · detalle jasmine→pink→raspberry */
-.rule{height:8px;width:112px;border-radius:8px;background:var(--rule);margin:0 0 20px}
-.rule.sm{height:6px;width:80px;margin-bottom:16px}
+/* firma de marca · jasmine · petal · olivo · raspberry */
+.rule{height:8px;width:150px;border-radius:8px;margin:0 0 22px;
+  background:linear-gradient(90deg,var(--jasmine) 0 30%,var(--petal) 30% 52%,var(--olive) 52% 76%,var(--raspberry) 76% 100%)}
+.rule.sm{height:6px;width:112px;margin-bottom:18px}
 
-/* el apellido en itálica frambuesa, como el logotipo del manual */
-.name-accent{font-style:italic;color:var(--raspberry);font-variation-settings:"wght" 600,"opsz" 40}
-
-/* etiqueta · relleno rosa, texto ink (rol de Pink Carnation) */
-/* el contorno ink define la forma: sobre el lienzo claro, el jasmine solo da 1.28:1 */
-.tag{display:inline-flex;align-items:center;font-family:var(--sans);font-size:.74rem;font-weight:600;
-  letter-spacing:.06em;padding:6px 14px;border-radius:999px;background:var(--pink);color:var(--ink);
+/* etiquetas · siempre texto Ink. Olivo queda fuera: no admite texto */
+.tag{display:inline-flex;align-items:center;font-family:var(--sans);font-size:.74rem;font-weight:500;
+  letter-spacing:.04em;padding:6px 14px;border-radius:999px;background:var(--petal);color:var(--ink);
   border:1px solid var(--line)}
 .tag.y{background:var(--jasmine)}
+.tag.m{background:var(--mint)}
 
-/* secciones y bloques · crema; delicadas · petal */
-.band--cream{background:var(--cream)}
-.band--petal{background:var(--petal)}
-/* en crema, raspberry se queda a 4.4:1 — el manual pide ink */
-.band--cream .eyebrow{color:var(--ink)}
+/* ---- BANDAS · el ritmo del manual ----
+   Las secciones se disuelven en el lienzo con un degradado en los bordes, para
+   que el cambio de fondo no se sienta como un corte. Las franjas (jasmine,
+   marquee) sí van a filo limpio: son "franjas" y deben leerse como tales. */
+.band{--bg:transparent;--fade-in:130px;--fade-out:130px;
+  background:linear-gradient(180deg,
+    var(--white) 0, var(--bg) var(--fade-in),
+    var(--bg) calc(100% - var(--fade-out)), var(--white) 100%)}
+.band--mint{--bg:var(--mint)}
+.band--petal{--bg:var(--petal)}
+/* franja de marca · sin difuminado */
+.band--jasmine{--bg:var(--jasmine);--fade-in:0px;--fade-out:0px}
+/* cabecera de página: arranca sólida, no hay nada arriba que difuminar */
+.band--top{--fade-in:0px}
+/* medido: raspberry sobre petal da 4.2:1, por debajo de AA (el manual lo
+   publica como 4.5). En bloques petal el texto de acento va en Ink. */
+.band--petal .eyebrow,.band--petal .prose-link{color:var(--ink)}
+.band--ink{background:var(--ink);color:var(--white)}
+.band--ink h2,.band--ink h3{color:var(--white)}
+.band--ink .eyebrow{color:var(--jasmine)}
+.band--ink p{color:rgba(254,249,238,.75)}
+
+/* el apellido en cursiva, igual que "Nails" en el logotipo */
+.name-accent{font-style:italic;color:var(--raspberry);font-variation-settings:"wght" 600,"opsz" 40}
 
 /* ---- HEADER / NAV ---- */
 .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;gap:20px;justify-content:space-between;
   padding:20px clamp(20px,5vw,64px);transition:.35s ease;background:transparent}
-.nav.scrolled{background:rgba(255,253,246,.94);backdrop-filter:blur(14px);padding-top:13px;padding-bottom:13px;
+.nav.scrolled{background:rgba(254,249,238,.94);backdrop-filter:blur(14px);padding-top:13px;padding-bottom:13px;
   border-bottom:1px solid var(--line)}
+/* logotipo · Fraunces con "Nails" en cursiva raspberry */
 .brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1;letter-spacing:.01em;
   font-variation-settings:"wght" 600,"opsz" 30}
-/* sobre el lienzo claro NO puede ir en jasmine (1.28:1); raspberry es el tono
-   cálido de marca que sí pasa (5.33:1). En el footer sí va jasmine: 10.85:1 */
-.brand small{font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--raspberry);display:block;margin-top:3px;font-weight:600}
+.brand em{font-style:italic;color:var(--raspberry)}
+.brand small{font-family:var(--sans);font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-top:6px;font-weight:500}
 .nav nav{margin-left:auto}
 .links{display:flex;align-items:center;gap:30px}
 .links a{font-size:.82rem;letter-spacing:.06em;color:var(--ink);position:relative;padding:4px 0;opacity:.72;transition:.25s}
 .links a:hover{opacity:1}
-.links a[aria-current]{opacity:1;font-weight:500}
-/* detalle de marca: bloque jasmine bajo la página activa */
+.links a[aria-current]{opacity:1;font-weight:500;isolation:isolate}
 .links a[aria-current]:not(.btn)::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-3px;height:9px;
   background:var(--jasmine);border-radius:3px;z-index:-1}
-.links a[aria-current]{isolation:isolate}
 .nav-cta-mobile{display:none}
 
-/* ---- BOTONES · raspberry es el color de acción ---- */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.82rem;letter-spacing:.06em;
-  font-weight:500;padding:13px 28px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:.28s ease;white-space:nowrap}
+/* ---- BOTONES · Raspberry es la acción principal, siempre ---- */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.83rem;letter-spacing:.05em;
+  font-weight:500;padding:13px 28px;border-radius:999px;cursor:pointer;border:1px solid transparent;
+  transition:.26s ease;white-space:nowrap}
 .btn-primary{background:var(--raspberry);color:#fff;border-color:var(--raspberry)}
-.btn-primary:hover{background:var(--ink);border-color:var(--ink)}
-.btn-ink{background:var(--ink);color:#fff;border-color:var(--ink)}
-.btn-ink:hover{background:var(--raspberry);border-color:var(--raspberry)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(62,34,51,.32)}
-.btn-ghost:hover{background:var(--jasmine);border-color:var(--ink)}
+.btn-primary:hover{background:var(--raspberry-dark);border-color:var(--raspberry-dark)}
+.btn-ink{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.btn-ink:hover{background:var(--raspberry);border-color:var(--raspberry);color:#fff}
+.btn-olive{background:var(--olive-deep);color:var(--white);border-color:var(--olive-deep)}
+.btn-olive:hover{background:var(--ink);border-color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(62,34,51,.3)}
+.btn-ghost:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .nav-cta{flex:none}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
 
 /* ---- SECCIONES ---- */
-.section{padding:clamp(64px,9vw,116px) clamp(20px,5vw,64px);max-width:var(--maxw);margin:0 auto}
-.section.first{padding-top:clamp(116px,14vh,168px)}
-.band + .section{padding-top:clamp(56px,7vw,88px)}
+.section{padding:clamp(64px,9vw,112px) clamp(20px,5vw,64px);max-width:var(--maxw);margin:0 auto}
+.section.first{padding-top:clamp(116px,14vh,166px)}
 .head-block{max-width:640px;margin-bottom:52px}
-.head-block h2{font-size:clamp(2.2rem,5vw,3.5rem);margin:12px 0 16px}
+.head-block h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:12px 0 16px}
 .head-block p{color:var(--muted);font-size:1.02rem}
+.band--ink .head-block p{color:rgba(254,249,238,.75)}
 
-/* ---- HERO · lienzo blanco, el amarillo entra como BLOQUE ---- */
+/* ---- HERO · warm white, la portada ---- */
 .hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);
-  align-items:center;padding:clamp(116px,15vh,150px) clamp(20px,5vw,64px) clamp(64px,8vw,96px);
+  align-items:center;padding:clamp(116px,15vh,148px) clamp(20px,5vw,64px) clamp(64px,8vw,96px);
   max-width:1300px;margin:0 auto}
 .hero-copy .eyebrow{display:block;margin-bottom:18px}
-.hero-copy h1{font-size:clamp(3.2rem,8vw,5.8rem);letter-spacing:-.015em;margin-bottom:6px;padding-bottom:.06em;
+.hero-copy h1{font-size:clamp(3.2rem,8vw,5.8rem);letter-spacing:-.02em;margin-bottom:6px;padding-bottom:.06em;
   font-variation-settings:"wght" 600,"opsz" 40}
 .hero-copy .lead{max-width:430px;color:var(--muted);font-size:1.06rem;margin:24px 0 30px}
 .hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-/* bloque jasmine sólido desplazado: el "detalle de marca" que enmarca la foto */
 .hero-visual{margin:0;position:relative;width:min(100%,500px);justify-self:end;aspect-ratio:3/4}
-.hero-visual::before{content:"";position:absolute;inset:26px -26px -26px 26px;background:var(--jasmine);
-  border-radius:180px 180px 20px 20px}
-.hero-visual img{position:relative;width:100%;height:100%;object-fit:cover;object-position:var(--hero-focus);
-  border-radius:180px 180px 20px 20px;border:1px solid var(--line)}
+.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:var(--hero-focus);
+  border-radius:180px 180px 20px 20px;border:1px solid var(--line);box-shadow:var(--shadow-photo)}
 
-/* ---- STATS · bloque crema con contornos ink ---- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);
-  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+/* ---- STATS · la franja Jasmine, el momento de marca de la portada ---- */
 .stats-wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(44px,6vw,72px) clamp(20px,5vw,64px)}
-.stat{background:var(--cream);padding:6px clamp(14px,2vw,28px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(62,34,51,.16)}
+/* rejilla alineada: barrita arriba, número centrado en una caja de altura fija
+   (los textos ES·EN y ✓ son más chicos) y la etiqueta anclada abajo */
+.stat{background:var(--jasmine);padding:6px clamp(14px,2vw,28px);display:flex;flex-direction:column}
 .stat dt{font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,4rem);font-weight:600;color:var(--ink);
-  line-height:1;letter-spacing:-.01em;font-variation-settings:"wght" 600,"opsz" 28}
+  line-height:1;letter-spacing:-.015em;font-variation-settings:"wght" 600,"opsz" 28;
+  display:flex;align-items:center;min-height:clamp(2.6rem,5.4vw,4rem)}
 .stat.txt dt{font-size:clamp(1.9rem,3.8vw,2.8rem)}
-.stat dd{font-size:.9rem;color:var(--muted);margin-top:12px;max-width:190px}
-/* barrita de marca sobre cada dato: en crema, el jasmine solo daría 1.06:1 —
-   el degradado aporta el rosa y la frambuesa que sí se ven */
-.stat::before{content:"";display:block;width:34px;height:6px;border-radius:6px;background:var(--rule);margin-bottom:20px}
+.stat dd{font-size:.9rem;color:var(--ink);opacity:.72;margin-top:auto;padding-top:14px;max-width:190px}
+.stat::before{content:"";display:block;width:34px;height:5px;border-radius:5px;background:var(--ink);margin-bottom:20px}
 
 /* ---- ABOUT ---- */
 .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,60px);align-items:center}
 .about-photo{margin:0;position:relative;aspect-ratio:4/5}
-.about-photo::before{content:"";position:absolute;inset:-20px 20px 20px -20px;background:var(--petal);border-radius:18px}
-.about-photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
+.about-photo img{width:100%;height:100%;object-fit:cover;border-radius:18px;
+  border:1px solid var(--line);box-shadow:var(--shadow-photo)}
 .about-copy h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 16px}
 .about-copy p{color:var(--muted);margin-bottom:14px;max-width:520px}
 .about-copy .btn{margin-top:12px}
 
-/* ---- GALERÍA · fotos protagonistas, la paleta las enmarca ---- */
+/* ---- GALERÍA · las fotos son las protagonistas ---- */
 .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:34px;padding:0}
 .chip{font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.04em;padding:9px 18px;border-radius:999px;
-  border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:.22s}
-.chip:hover{background:var(--lemon);border-color:var(--ink)}
+  border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;transition:.22s}
+.chip:hover{background:var(--mint);border-color:var(--olive)}
 .chip[aria-pressed="true"]{background:var(--jasmine);color:var(--ink);border-color:var(--ink);font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
 .teaser-grid{grid-template-columns:repeat(4,1fr)}
@@ -163,103 +195,95 @@ button{font:inherit}
   border:1px solid var(--line);color:transparent;font-size:0}
 .tile figcaption{font-family:var(--serif);font-size:1rem;font-weight:500;margin-top:11px;color:var(--ink)}
 .tile:hover{transform:translateY(-4px)}
-.tile:hover img{border-color:var(--ink)}
+.tile:hover img{border-color:var(--olive)}
 
-/* ---- SERVICIOS · tarjetas lemon/petal con contorno ink ---- */
+/* ---- SERVICIOS · bloque delicado Petal, tarjetas en blanco ---- */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.svc{background:var(--lemon);border:1px solid var(--line);padding:30px 28px 32px;border-radius:20px;transition:.3s}
-.svc:nth-child(3n+2){background:var(--petal)}
-.svc:hover{border-color:var(--ink);transform:translateY(-3px)}
-/* el número va en ink: sobre la tarjeta petal, un jasmine daría 1.00:1 */
+.svc{background:var(--white);border:1px solid var(--line);padding:30px 28px 32px;border-radius:20px;transition:.3s}
+.svc:hover{border-color:var(--olive);transform:translateY(-3px)}
 .svc .n{display:inline-flex;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.1em;
   background:var(--ink);color:var(--white);padding:5px 12px;border-radius:999px;margin-bottom:16px}
 .svc h3{font-size:1.3rem;margin-bottom:9px}
 .svc p{color:var(--muted);font-size:.93rem}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
 .badge{display:inline-flex;align-items:center;gap:9px;font-size:.83rem;font-weight:500;color:var(--ink);
-  background:var(--jasmine);border:1px solid var(--line);border-radius:999px;padding:10px 20px}
-.badge.alt{background:var(--pink)}
-.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink)}
+  background:var(--white);border:1px solid var(--line-strong);border-radius:999px;padding:10px 20px}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--olive)}
 
 /* ---- PRENSA ---- */
 .press-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,54px);align-items:center}
 .press-hero h2{font-size:clamp(2rem,4.5vw,3.1rem);margin:12px 0 18px}
 .press-hero p{color:var(--muted);margin-bottom:16px}
 .press-figure{margin:0;position:relative;aspect-ratio:4/3}
-.press-figure::before{content:"";position:absolute;inset:22px -22px -22px 22px;background:var(--jasmine);border-radius:16px}
-.press-figure img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.press-figure img{width:100%;height:100%;object-fit:cover;border-radius:16px;
+  border:1px solid var(--line);box-shadow:var(--shadow-photo)}
 .press-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .press-shots .tile img{aspect-ratio:3/4}
 
-/* ---- AGENDA ---- */
+/* ---- AGENDA · bloque Ink, para que el botón resalte (manual 04) ---- */
 .book{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,4vw,56px);align-items:start}
 .book .intro h2{font-size:clamp(2.2rem,5vw,3.3rem);margin:12px 0 18px}
 .book .intro p{color:var(--muted);margin-bottom:26px;max-width:380px}
 .contact-row{font-style:normal;display:flex;flex-direction:column;gap:10px;margin-top:24px}
 .contact-row a{display:flex;align-items:center;gap:14px;font-size:.96rem;color:var(--ink);
   border:1px solid var(--line);border-radius:14px;padding:12px 16px;transition:.25s}
-.contact-row a:hover{background:var(--lemon);border-color:var(--ink)}
-/* iconos en ink sobre círculo jasmine */
+.contact-row a:hover{background:var(--mint);border-color:var(--olive)}
 .contact-row .k{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--jasmine);
   color:var(--ink);font-size:.9rem;flex:none}
-/* tarjeta de reserva · fondo suave lemon, contorno ink */
-.cal{background:var(--lemon);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,34px);
-  color:var(--ink);display:flex;flex-direction:column}
-.cal h3{font-size:1.8rem;margin:10px 0 8px}
-.cal p{color:var(--muted);font-size:.92rem;margin-bottom:22px}
-.cal .calendly-inline-widget{border-radius:14px;overflow:hidden;background:var(--white);border:1px solid var(--line)}
+.cal{background:var(--ink);border-radius:22px;padding:clamp(22px,3vw,34px);color:var(--white);
+  display:flex;flex-direction:column}
+.cal .eyebrow{color:var(--jasmine)}
+.cal h3{font-size:1.8rem;margin:10px 0 8px;color:var(--white)}
+.cal p{color:rgba(254,249,238,.72);font-size:.92rem;margin-bottom:22px}
+.cal .calendly-inline-widget{border-radius:14px;overflow:hidden;background:var(--white)}
 .cal .btn{align-self:flex-start;margin-top:20px}
 
-/* ---- MARQUEE · la franja jasmine ---- */
-.marquee{background:var(--jasmine);color:var(--ink);overflow:hidden;white-space:nowrap;padding:15px 0;
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* ---- MARQUEE · la segunda franja Jasmine, justo antes del cierre Ink ---- */
+.marquee{background:var(--jasmine);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0}
 .marquee-track{display:inline-flex;gap:40px;animation:slide 26s linear infinite}
 .marquee span{font-family:var(--serif);font-style:italic;font-size:1.08rem;font-variation-settings:"wght" 500,"opsz" 36}
 .marquee .dot{color:var(--raspberry);font-style:normal}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---- FOOTER · ancla oscura de la marca ---- */
-/* sin franja decorativa aquí: el marquee jasmine ya es la franja, y su borde
-   contra el ink (10.85:1) es corte suficiente. Dos franjas seguidas se comían entre sí. */
-.foot{background:var(--ink);color:var(--petal)}
+/* ---- FOOTER · Ink, cierra la página ---- */
+.foot{background:var(--ink);color:var(--white);border-top:1px solid rgba(254,249,238,.14)}
 .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:clamp(28px,5vw,64px);
   max-width:var(--maxw);margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,5vw,64px) clamp(36px,4vw,52px)}
-.foot .brand{color:#fff;font-size:1.7rem}
-.foot .brand small{color:var(--jasmine)}
-.foot-pitch{color:rgba(255,215,233,.72);font-size:.92rem;margin:16px 0 24px;max-width:300px}
+/* sobre Ink el logotipo va en blanco y "Nails" en Jasmine (manual 03) */
+.foot .brand{color:var(--white);font-size:1.7rem}
+.foot .brand em{color:var(--jasmine)}
+.foot .brand small{color:rgba(254,249,238,.72)}
+.foot-pitch{color:rgba(254,249,238,.72);font-size:.92rem;margin:16px 0 24px;max-width:300px}
 .foot-h{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
   color:var(--jasmine);margin-bottom:18px}
 .foot-col ul{display:flex;flex-direction:column;gap:11px;font-size:.9rem}
-.foot-col a{color:rgba(255,215,233,.8);transition:.22s}
-.foot-col a:hover{color:#fff}
-.foot-bottom{border-top:1px solid rgba(255,215,233,.18);max-width:var(--maxw);margin:0 auto;
+.foot-col a{color:rgba(254,249,238,.78);transition:.22s}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{border-top:1px solid rgba(254,249,238,.16);max-width:var(--maxw);margin:0 auto;
   padding:22px clamp(20px,5vw,64px) 30px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.foot .fine{font-size:.74rem;color:rgba(255,215,233,.5);letter-spacing:.04em}
+.foot .fine{font-size:.74rem;color:rgba(254,249,238,.5);letter-spacing:.04em}
 
 /* ---- DOCK ---- */
 .dock{position:fixed;right:20px;bottom:20px;z-index:55;display:flex;flex-direction:column;gap:10px;
   opacity:0;transform:translateY(20px);transition:.4s;pointer-events:none}
 .dock.show{opacity:1;transform:none;pointer-events:auto}
-/* el dock flota sobre lienzo claro Y sobre el footer ink: el aro warm white
-   lo despega del oscuro (ink sobre ink daba 1.00:1) sin notarse en lo claro */
-.dock .btn{border-color:var(--ink);box-shadow:0 0 0 2px var(--white),var(--shadow)}
-.fab-wa{background:var(--jasmine);color:var(--ink)}
+/* flota sobre lienzo claro y sobre el cierre Ink: el aro lo despega de ambos */
+.dock .btn{box-shadow:0 0 0 2px var(--white),var(--shadow)}
+.fab-wa{background:var(--jasmine);color:var(--ink);border-color:var(--ink)}
 .fab-wa:hover{background:var(--ink);color:var(--white)}
 
 /* ---- LIGHTBOX (dialog) ---- */
-/* margin:auto lo recentra: el reset `*{margin:0}` mata el default del <dialog> */
 .lb{border:1px solid var(--line);padding:0;margin:auto;width:min(760px,calc(100% - 32px));max-width:760px;
   max-height:92svh;border-radius:20px;background:var(--white);box-shadow:var(--shadow);overflow:auto}
 .lb::backdrop{background:rgba(62,34,51,.82);backdrop-filter:blur(6px)}
 .lb figure{margin:0;position:relative}
 .lb img{width:100%;height:auto;max-height:70svh;object-fit:contain;background:var(--ink)}
-.lb .info{padding:20px 24px 24px;background:var(--lemon);border-top:1px solid var(--line)}
+.lb .info{padding:20px 24px 24px;background:var(--mint);border-top:1px solid var(--line)}
 .lb .info .eyebrow{margin-bottom:7px;display:block}
 .lb .info h3{font-size:1.35rem;margin-bottom:5px}
 .lb .info p{color:var(--muted);font-size:.87rem}
 .lb-close{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;
   border:1px solid var(--ink);background:var(--jasmine);cursor:pointer;font-size:1.05rem;color:var(--ink)}
-.tile:focus-visible{outline:3px solid var(--raspberry);outline-offset:5px;border-radius:14px}
 
 /* ---- REVEAL ---- */
 .reveal{opacity:0;transform:translateY(24px);transition:.75s cubic-bezier(.2,.7,.2,1)}
@@ -274,6 +298,7 @@ button{font:inherit}
   .hero{grid-template-columns:1fr;min-height:auto;gap:52px}
   .hero-visual{max-width:400px;margin:0 auto;width:100%;justify-self:center}
   .hero-visual::before{inset:20px -20px -20px 20px}
+  .hero-visual::after{inset:-10px 10px 10px -10px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .press-hero,.book{grid-template-columns:1fr}
   .about{grid-template-columns:1fr}
@@ -284,7 +309,7 @@ button{font:inherit}
   .links.open{display:flex;position:fixed;top:60px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
     background:var(--white);padding:10px 24px 24px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
   .links.open li{padding:0}
-  .links.open a{display:block;padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:1rem;opacity:1}
+  .links.open a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;opacity:1}
   .links.open a[aria-current]:not(.btn)::after{display:none}
   .links.open a[aria-current]{color:var(--raspberry)}
   .links.open .nav-cta-mobile{display:block;margin-top:16px}
