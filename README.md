@@ -13,7 +13,12 @@ prensa.html         Reconocimiento y apariciones en medios
 agenda.html         Reserva (Calendly embebido) y contacto
 assets/styles.css   Sistema de diseño completo
 assets/app.js       Filtros, lightbox, contadores, reveal, menú móvil
+assets/img/luucyy-logo.png  Archivo fuente oficial con aro ampliado
+assets/img/luucyy-logo-transparent.png  Versión web sin fondo
+assets/img/luucyy-logo-wide.webp  Logotipo transparente recortado y optimizado
 assets/img/         Fotos reales, agrupadas por categoría
+robots.txt          Directivas para rastreadores
+sitemap.xml         Inventario de URLs indexables
 ```
 
 El menú y el pie se repiten en cada archivo a propósito: así cada página funciona
@@ -31,7 +36,7 @@ un rol y no se usa fuera de él.
 | `--petal` | `#FFD7E9` | Rosa suave · tarjetas y secciones delicadas |
 | `--olive` | `#9F8F65` | Tierra · **solo decorativo**, nunca lleva texto |
 | `--ink` | `#3E2233` | Todo el texto · ancla oscura |
-| `--raspberry` | `#B83A6E` | Solo el logotipo ("Nails") y su tramo de `.rule` |
+| `--raspberry` | `#B83A6E` | Acento de identidad dentro de la firma cromática `.rule` |
 | `--mint` | `#F2FEDC` | Fondo alterno para separar secciones |
 | `--olive-deep` | `#6F6240` | Acento principal: botones, rótulos y texto de acento |
 
@@ -44,7 +49,32 @@ en todos los fondos claros —5.72 vs 5.17 sobre blanco cálido y mint, y 4.62 v
 4.17 sobre petal, donde raspberry reprueba.
 
 El raspberry se retiró de la interfaz y quedó como color exclusivamente de
-identidad: el "Nails" del logotipo y su tramo en la barra de marca.
+identidad dentro de la barra de marca. El logotipo oficial conserva sus colores
+originales y se utiliza como archivo de imagen, sin reconstruirlo con tipografía web.
+
+### Logotipo oficial
+
+`assets/img/luucyy-logo.png` conserva el archivo fuente oficial con el aro “Nail
+Artist” ampliado. `assets/img/luucyy-logo-transparent.png` retira únicamente el
+fondo para integrarlo sin recuadros en la navegación y el pie de página; no hay
+reconstrucciones tipográficas ni recoloreados. La interfaz carga
+`assets/img/luucyy-logo-wide.webp`, un recorte transparente del mismo archivo,
+para evitar descargar y esconder el lienzo cuadrado completo.
+
+## SEO, accesibilidad y rendimiento
+
+- Cada página incluye título y descripción únicos, URL canónica, metadatos
+  Open Graph/Twitter, idioma `es-MX` y directivas de indexación.
+- El inicio publica datos estructurados `BeautySalon`, `Person` y `WebSite` sin
+  inventar dirección, horarios ni precios.
+- `robots.txt` enlaza `sitemap.xml`, que enumera las cinco páginas públicas.
+- Todas las fotografías visibles cargan WebP responsive con `srcset`, `sizes`,
+  dimensiones intrínsecas y carga diferida bajo el primer pantallazo.
+- La imagen principal usa prioridad alta; el resto usa `loading="lazy"` y
+  `decoding="async"`.
+- Hay enlace de salto, foco visible, jerarquía de encabezados continua,
+  anuncios del filtro, diálogo con nombre y descripción, y reducción de
+  movimiento según la preferencia del sistema.
 
 El olivo claro `#9F8F65` **no sirve como texto** (3.03:1). Se queda en bordes,
 marcos, viñetas y el contorno de los botones fantasma.
@@ -81,7 +111,7 @@ marquee— van a filo limpio a propósito: deben leerse como franjas.
 
 - Todo el texto en Ink. Blanco solo sobre Ink, Olive Deep o Raspberry.
 - **Nunca texto sobre `--olive`**, en ningún color, ni texto escrito en olivo o amarillo.
-- Raspberry solo en el logotipo; los acentos y botones van en Olive Deep.
+- Raspberry solo en la firma cromática; los acentos y botones van en Olive Deep.
 - El amarillo aparece una o dos veces por página, no más.
 - Nada de pastel sobre pastel.
 - Bordes y separadores: olivo al 25% (`--line`). Sombras siempre cálidas, nunca grises.

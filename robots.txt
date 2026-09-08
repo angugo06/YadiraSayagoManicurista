@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angugo06.github.io/YadiraSayagoManicurista/sitemap.xml

@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Agenda tu cita · Luucyy Nails</title>
-<meta name="description" content="Agenda tu cita con Yadira Sayago. Reserva en línea, WhatsApp e Instagram.">
+<title>Agenda manicura en CDMX · Luucyy Nails</title>
+<meta name="description" content="Agenda tu cita de manicura y nail art con Yadira Sayago en CDMX. Reserva en línea por Calendly o contacta por WhatsApp.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#FEF9EE">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://angugo06.github.io/YadiraSayagoManicurista/agenda.html">
+<link rel="icon" href="assets/img/luucyy-logo-wide.webp?v=6" type="image/webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Luucyy Nails">
+<meta property="og:title" content="Agenda tu cita · Luucyy Nails">
+<meta property="og:description" content="Reserva en línea tu cita de manicura y nail art con Yadira Sayago en CDMX.">
+<meta property="og:url" content="https://angugo06.github.io/YadiraSayagoManicurista/agenda.html">
+<meta property="og:image" content="https://angugo06.github.io/YadiraSayagoManicurista/assets/img/hero.jpg">
+<meta property="og:image:alt" content="Diseño de uñas creado por Yadira Sayago">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agenda tu cita · Luucyy Nails">
+<meta name="twitter:description" content="Reserva tu cita de manicura y nail art en CDMX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body class="booking-page">
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 <header class="nav" id="nav">
-  <a class="brand" href="index.html"><span>Luucyy <em>Nails</em></span><small>by Yadira Sayago</small></a>
+  <a class="brand brand-logo" href="index.html" aria-label="Luucyy Nail Artist · Inicio">
+    <span class="brand-crop"><img src="assets/img/luucyy-logo-wide.webp?v=6" alt="" width="1000" height="549" decoding="async"></span>
+    <small>Yadira Sayago · CDMX</small>
+  </a>
   <nav aria-label="Navegación principal">
     <ul class="links" id="links">
       <li><a href="index.html">Inicio</a></li>
@@ -23,15 +43,15 @@
     </ul>
   </nav>
   <a class="btn btn-primary nav-cta" href="agenda.html" aria-current="page"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
 </header>
-<main>
+<main id="main-content" tabindex="-1">
   <section class="section first" aria-labelledby="ag-h">
     <div class="book">
       <div class="intro">
         <div class="rule reveal" aria-hidden="true"></div>
         <p class="eyebrow reveal">Reserva</p>
-        <h2 id="ag-h" class="reveal">Agenda tu cita</h2>
+        <h1 id="ag-h" class="reveal">Agenda tu cita</h1>
         <p class="reveal">Elige el servicio y el horario que mejor te queden. Reserva en línea en segundos.</p>
         <address class="contact-row reveal">
           <a href="https://wa.me/525528695896" target="_blank" rel="noopener"><span class="k" aria-hidden="true">✆</span>WhatsApp · 55 2869 5896</a>
@@ -41,14 +61,11 @@
       </div>
       <div class="cal reveal">
         <p class="eyebrow">Agenda en línea</p>
-        <h3>Reserva directa</h3>
+        <h2>Reserva directa</h2>
         <p>Sin llamadas ni esperas. Disponibilidad en tiempo real.</p>
-	<!-- Principio del widget integrado de Calendly -->
-	<div class="calendly-inline-widget" data-url="https://calendly.com/yadira-sayago-1503/manicura?hide_event_type_details=1" style="min-width:320px;height:700px;"></div>
-	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-	<!-- Final del widget integrado de Calendly -->        
-	<br>
-	<a class="btn btn-primary" href="https://calendly.com/yadira-sayago-1503/manicura" target="_blank" rel="noopener"><span>Abrir agenda (Calendly)</span></a>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/yadira-sayago-1503/manicura?hide_event_type_details=1" role="region" aria-label="Calendario para reservar una cita" style="min-width:320px;height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <a class="btn btn-primary" href="https://calendly.com/yadira-sayago-1503/manicura" target="_blank" rel="noopener"><span>Abrir agenda en Calendly</span></a>
       </div>
     </div>
   </section>
@@ -62,7 +79,10 @@
 <footer class="foot">
   <div class="foot-top">
     <div class="foot-col">
-      <p class="brand">Luucyy <em>Nails</em><small>by Yadira Sayago</small></p>
+      <a class="brand brand-logo brand-logo--footer" href="index.html" aria-label="Luucyy Nail Artist · Inicio">
+        <span class="brand-crop"><img src="assets/img/luucyy-logo-wide.webp?v=6" alt="" width="1000" height="549" loading="lazy" decoding="async"></span>
+        <small>Yadira Sayago · CDMX</small>
+      </a>
       <p class="foot-pitch">Manicura de precisión y nail art en la Ciudad de México. Diseño hecho a tu medida, con atención en español e inglés.</p>
       <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
     </div>

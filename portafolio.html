@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Portafolio · Luucyy Nails</title>
+<title>Portafolio de uñas en CDMX · Luucyy Nails</title>
 <meta name="description" content="Portafolio de diseños de uñas de Yadira Sayago: nail art, acrílico, gelish, chrome y efectos.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#FEF9EE">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://angugo06.github.io/YadiraSayagoManicurista/portafolio.html">
+<link rel="icon" href="assets/img/luucyy-logo-wide.webp?v=6" type="image/webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Luucyy Nails">
+<meta property="og:title" content="Portafolio de uñas · Luucyy Nails">
+<meta property="og:description" content="Diseños reales de nail art, acrílico, gelish, chrome y efectos creados por Yadira Sayago.">
+<meta property="og:url" content="https://angugo06.github.io/YadiraSayagoManicurista/portafolio.html">
+<meta property="og:image" content="https://angugo06.github.io/YadiraSayagoManicurista/assets/img/hero.jpg">
+<meta property="og:image:alt" content="Diseño de uñas creado por Yadira Sayago">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portafolio · Luucyy Nails">
+<meta name="twitter:description" content="Nail art y diseños de uñas de Yadira Sayago en CDMX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 <header class="nav" id="nav">
-  <a class="brand" href="index.html"><span>Luucyy <em>Nails</em></span><small>by Yadira Sayago</small></a>
+  <a class="brand brand-logo" href="index.html" aria-label="Luucyy Nail Artist · Inicio">
+    <span class="brand-crop"><img src="assets/img/luucyy-logo-wide.webp?v=6" alt="" width="1000" height="549" decoding="async"></span>
+    <small>Yadira Sayago · CDMX</small>
+  </a>
   <nav aria-label="Navegación principal">
     <ul class="links" id="links">
       <li><a href="index.html">Inicio</a></li>
@@ -23,113 +43,114 @@
     </ul>
   </nav>
   <a class="btn btn-primary nav-cta" href="agenda.html"><span>Agendar cita</span></a>
-  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
 </header>
-<main>
+<main id="main-content" tabindex="-1">
   <div class="band band--mint band--top">
     <section class="section first" aria-labelledby="port-h" style="padding-bottom:clamp(40px,5vw,56px)">
       <header class="head-block" style="margin-bottom:36px">
         <div class="rule reveal" aria-hidden="true"></div>
         <p class="eyebrow reveal">El trabajo</p>
-        <h2 id="port-h" class="reveal">Portafolio</h2>
+        <h1 id="port-h" class="reveal">Portafolio</h1>
         <p class="reveal">Cada pieza es un diseño real. Filtra por técnica para ver la variedad, desde nail art a mano alzada hasta acabados de color y textura.</p>
       </header>
       <div class="filters reveal" id="filters" role="group" aria-label="Filtrar por técnica" style="margin-bottom:0">
-      <button class="chip" data-f="all" aria-pressed="true">Todo</button>
-      <button class="chip" data-f="nailart" aria-pressed="false">Nail Art y Diseño</button>
-      <button class="chip" data-f="chrome" aria-pressed="false">Chrome y efectos</button>
-      <button class="chip" data-f="esculturales" aria-pressed="false">Esculturales</button>
-      <button class="chip" data-f="gel" aria-pressed="false">Gel semipermanente</button>
-      <button class="chip" data-f="prensa" aria-pressed="false">Prensa</button>
+      <button class="chip" type="button" data-f="all" aria-pressed="true">Todo</button>
+      <button class="chip" type="button" data-f="nailart" aria-pressed="false">Nail Art y Diseño</button>
+      <button class="chip" type="button" data-f="chrome" aria-pressed="false">Chrome y efectos</button>
+      <button class="chip" type="button" data-f="esculturales" aria-pressed="false">Esculturales</button>
+      <button class="chip" type="button" data-f="gel" aria-pressed="false">Gel semipermanente</button>
+      <button class="chip" type="button" data-f="prensa" aria-pressed="false">Prensa</button>
       </div>
+      <p class="sr-only" id="filter-status" aria-live="polite" aria-atomic="true">Mostrando 28 diseños.</p>
     </section>
   </div>
 
   <section class="section" aria-label="Galería de diseños">
     <ul class="grid">
       <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
-        <figure class="tile"><img src="assets/img/chrome-y-efectos/cat-eye-y-flor.jpg" alt="Diseño de uñas: Cat eye y flor" loading="lazy" width="440" height="550"><figcaption>Cat eye y flor</figcaption></figure>
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/cat-eye-y-flor.webp" srcset="assets/img/chrome-y-efectos/cat-eye-y-flor-640.webp 640w, assets/img/chrome-y-efectos/cat-eye-y-flor.webp 1224w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Cat eye y flor" loading="lazy" decoding="async" width="1224" height="2008"><figcaption>Cat eye y flor</figcaption></figure>
       </li>
       <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
-        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-dorado.jpg" alt="Diseño de uñas: Chrome dorado" loading="lazy" width="440" height="550"><figcaption>Chrome dorado</figcaption></figure>
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-dorado.webp" srcset="assets/img/chrome-y-efectos/chrome-dorado-640.webp 640w, assets/img/chrome-y-efectos/chrome-dorado.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Chrome dorado" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Chrome dorado</figcaption></figure>
       </li>
       <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
-        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve.jpg" alt="Diseño de uñas: Chrome relieve" loading="lazy" width="440" height="550"><figcaption>Chrome relieve</figcaption></figure>
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve.webp" srcset="assets/img/chrome-y-efectos/chrome-relieve-640.webp 640w, assets/img/chrome-y-efectos/chrome-relieve.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Chrome relieve" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Chrome relieve</figcaption></figure>
       </li>
       <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
-        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve-y-aerografo.jpg" alt="Diseño de uñas: Chrome relieve y aerógrafo" loading="lazy" width="440" height="550"><figcaption>Chrome relieve y aerógrafo</figcaption></figure>
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/chrome-relieve-y-aerografo.webp" srcset="assets/img/chrome-y-efectos/chrome-relieve-y-aerografo-640.webp 640w, assets/img/chrome-y-efectos/chrome-relieve-y-aerografo.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Chrome relieve y aerógrafo" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Chrome relieve y aerógrafo</figcaption></figure>
       </li>
       <li class="cell" data-cat="chrome" data-label="Chrome y efectos">
-        <figure class="tile"><img src="assets/img/chrome-y-efectos/efecto-aurora.jpg" alt="Diseño de uñas: Efecto aurora" loading="lazy" width="440" height="550"><figcaption>Efecto aurora</figcaption></figure>
+        <figure class="tile"><img src="assets/img/chrome-y-efectos/efecto-aurora.webp" srcset="assets/img/chrome-y-efectos/efecto-aurora-640.webp 640w, assets/img/chrome-y-efectos/efecto-aurora.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Efecto aurora" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Efecto aurora</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/aerografo-y-piedras.jpg" alt="Diseño de uñas: Aerógrafo y piedras" loading="lazy" width="440" height="550"><figcaption>Aerógrafo y piedras</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/aerografo-y-piedras.webp" srcset="assets/img/nail-art/aerografo-y-piedras-640.webp 640w, assets/img/nail-art/aerografo-y-piedras.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Aerógrafo y piedras" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Aerógrafo y piedras</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/brillos-y-relieve-plata.jpg" alt="Diseño de uñas: Brillos y relieve plata" loading="lazy" width="440" height="550"><figcaption>Brillos y relieve plata</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/brillos-y-relieve-plata.webp" srcset="assets/img/nail-art/brillos-y-relieve-plata-640.webp 640w, assets/img/nail-art/brillos-y-relieve-plata.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Brillos y relieve plata" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Brillos y relieve plata</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/cartoon-pato-donald.jpg" alt="Diseño de uñas: Cartoon pato Donald" loading="lazy" width="440" height="550"><figcaption>Cartoon pato Donald</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/cartoon-pato-donald.webp" srcset="assets/img/nail-art/cartoon-pato-donald-640.webp 640w, assets/img/nail-art/cartoon-pato-donald.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Cartoon pato Donald" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Cartoon pato Donald</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/chiikawa-cartoon.jpg" alt="Diseño de uñas: Chiikawa cartoon" loading="lazy" width="440" height="550"><figcaption>Chiikawa cartoon</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/chiikawa-cartoon.webp" srcset="assets/img/nail-art/chiikawa-cartoon-640.webp 640w, assets/img/nail-art/chiikawa-cartoon.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Chiikawa cartoon" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Chiikawa cartoon</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/cola-de-sirena-encapsulada.jpg" alt="Diseño de uñas: Cola de sirena encapsulada" loading="lazy" width="440" height="550"><figcaption>Cola de sirena encapsulada</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/cola-de-sirena-encapsulada.webp" srcset="assets/img/nail-art/cola-de-sirena-encapsulada-640.webp 640w, assets/img/nail-art/cola-de-sirena-encapsulada.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Cola de sirena encapsulada" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Cola de sirena encapsulada</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/diseno-amarillo-azul.jpg" alt="Diseño de uñas: Diseño amarillo-azul" loading="lazy" width="440" height="550"><figcaption>Diseño amarillo-azul</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/diseno-amarillo-azul.webp" srcset="assets/img/nail-art/diseno-amarillo-azul-640.webp 640w, assets/img/nail-art/diseno-amarillo-azul.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Diseño amarillo-azul" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Diseño amarillo-azul</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/full-color.jpg" alt="Diseño de uñas: Full color" loading="lazy" width="440" height="550"><figcaption>Full color</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/full-color.webp" srcset="assets/img/nail-art/full-color-640.webp 640w, assets/img/nail-art/full-color.webp 1259w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Full color" loading="lazy" decoding="async" width="1259" height="1916"><figcaption>Full color</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/full-relieve.jpg" alt="Diseño de uñas: Full relieve" loading="lazy" width="440" height="550"><figcaption>Full relieve</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/full-relieve.webp" srcset="assets/img/nail-art/full-relieve-640.webp 640w, assets/img/nail-art/full-relieve.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Full relieve" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Full relieve</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/lineas-y-piedras.jpg" alt="Diseño de uñas: Líneas y piedras" loading="lazy" width="440" height="550"><figcaption>Líneas y piedras</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/lineas-y-piedras.webp" srcset="assets/img/nail-art/lineas-y-piedras-640.webp 640w, assets/img/nail-art/lineas-y-piedras.webp 1290w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Líneas y piedras" loading="lazy" decoding="async" width="1290" height="1897"><figcaption>Líneas y piedras</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/muneca-y-flores.jpg" alt="Diseño de uñas: Muñeca y flores" loading="lazy" width="440" height="550"><figcaption>Muñeca y flores</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/muneca-y-flores.webp" srcset="assets/img/nail-art/muneca-y-flores-640.webp 640w, assets/img/nail-art/muneca-y-flores.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Muñeca y flores" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Muñeca y flores</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/osos-escandalosos.jpg" alt="Diseño de uñas: Osos escandalosos" loading="lazy" width="440" height="550"><figcaption>Osos escandalosos</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/osos-escandalosos.webp" srcset="assets/img/nail-art/osos-escandalosos-640.webp 640w, assets/img/nail-art/osos-escandalosos.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Osos escandalosos" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Osos escandalosos</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/pastel-y-mano-alzada.jpg" alt="Diseño de uñas: Pastel y mano alzada" loading="lazy" width="440" height="550"><figcaption>Pastel y mano alzada</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/pastel-y-mano-alzada.webp" srcset="assets/img/nail-art/pastel-y-mano-alzada-640.webp 640w, assets/img/nail-art/pastel-y-mano-alzada.webp 1263w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Pastel y mano alzada" loading="lazy" decoding="async" width="1263" height="1696"><figcaption>Pastel y mano alzada</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/press-on-con-blooming.jpg" alt="Diseño de uñas: Press on con blooming" loading="lazy" width="440" height="550"><figcaption>Press on con blooming</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/press-on-con-blooming.webp" srcset="assets/img/nail-art/press-on-con-blooming-640.webp 640w, assets/img/nail-art/press-on-con-blooming.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Press on con blooming" loading="lazy" decoding="async" width="1600" height="2222"><figcaption>Press on con blooming</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/relieve-mate.jpg" alt="Diseño de uñas: Relieve mate" loading="lazy" width="440" height="550"><figcaption>Relieve mate</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/relieve-mate.webp" srcset="assets/img/nail-art/relieve-mate-640.webp 640w, assets/img/nail-art/relieve-mate.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Relieve mate" loading="lazy" decoding="async" width="1600" height="2264"><figcaption>Relieve mate</figcaption></figure>
       </li>
       <li class="cell" data-cat="nailart" data-label="Nail Art">
-        <figure class="tile"><img src="assets/img/nail-art/scary-movie.jpg" alt="Diseño de uñas: Scary movie" loading="lazy" width="440" height="550"><figcaption>Scary movie</figcaption></figure>
+        <figure class="tile"><img src="assets/img/nail-art/scary-movie.webp" srcset="assets/img/nail-art/scary-movie-640.webp 640w, assets/img/nail-art/scary-movie.webp 1106w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Scary movie" loading="lazy" decoding="async" width="1106" height="1623"><figcaption>Scary movie</figcaption></figure>
       </li>
       <li class="cell" data-cat="esculturales" data-label="Esculturales">
-        <figure class="tile"><img src="assets/img/esculturales/esculturales-lechosas.jpg" alt="Diseño de uñas: Esculturales lechosas" loading="lazy" width="440" height="550"><figcaption>Esculturales lechosas</figcaption></figure>
+        <figure class="tile"><img src="assets/img/esculturales/esculturales-lechosas.webp" srcset="assets/img/esculturales/esculturales-lechosas-640.webp 640w, assets/img/esculturales/esculturales-lechosas.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Esculturales lechosas" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Esculturales lechosas</figcaption></figure>
       </li>
       <li class="cell" data-cat="gel" data-label="Gel semipermanente">
-        <figure class="tile"><img src="assets/img/gel-semipermanente/flores.jpg" alt="Diseño de uñas: Flores" loading="lazy" width="440" height="550"><figcaption>Flores</figcaption></figure>
+        <figure class="tile"><img src="assets/img/gel-semipermanente/flores.webp" srcset="assets/img/gel-semipermanente/flores-640.webp 640w, assets/img/gel-semipermanente/flores.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Flores" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Flores</figcaption></figure>
       </li>
       <li class="cell" data-cat="gel" data-label="Gel semipermanente">
-        <figure class="tile"><img src="assets/img/gel-semipermanente/frances-y-limones.jpg" alt="Diseño de uñas: Francés y limones" loading="lazy" width="440" height="550"><figcaption>Francés y limones</figcaption></figure>
+        <figure class="tile"><img src="assets/img/gel-semipermanente/frances-y-limones.webp" srcset="assets/img/gel-semipermanente/frances-y-limones-640.webp 640w, assets/img/gel-semipermanente/frances-y-limones.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Francés y limones" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Francés y limones</figcaption></figure>
       </li>
       <li class="cell" data-cat="gel" data-label="Gel semipermanente">
-        <figure class="tile"><img src="assets/img/gel-semipermanente/lineas.jpg" alt="Diseño de uñas: Líneas" loading="lazy" width="440" height="550"><figcaption>Líneas</figcaption></figure>
+        <figure class="tile"><img src="assets/img/gel-semipermanente/lineas.webp" srcset="assets/img/gel-semipermanente/lineas-640.webp 640w, assets/img/gel-semipermanente/lineas.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Líneas" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Líneas</figcaption></figure>
       </li>
       <li class="cell" data-cat="gel" data-label="Gel semipermanente">
-        <figure class="tile"><img src="assets/img/gel-semipermanente/snoopy-navideno.jpg" alt="Diseño de uñas: Snoopy navideño" loading="lazy" width="440" height="550"><figcaption>Snoopy navideño</figcaption></figure>
+        <figure class="tile"><img src="assets/img/gel-semipermanente/snoopy-navideno.webp" srcset="assets/img/gel-semipermanente/snoopy-navideno-640.webp 640w, assets/img/gel-semipermanente/snoopy-navideno.webp 1600w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Snoopy navideño" loading="lazy" decoding="async" width="1600" height="2133"><figcaption>Snoopy navideño</figcaption></figure>
       </li>
       <li class="cell" data-cat="prensa" data-label="Prensa">
-        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-1.jpg" alt="Diseño de uñas: Aparición en medios · 1" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 1</figcaption></figure>
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-1.webp" srcset="assets/img/prensa/aparicion-en-medios-1-640.webp 640w, assets/img/prensa/aparicion-en-medios-1.webp 1290w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Aparición en medios · 1" loading="lazy" decoding="async" width="1290" height="1578"><figcaption>Aparición en medios · 1</figcaption></figure>
       </li>
       <li class="cell" data-cat="prensa" data-label="Prensa">
-        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-2.jpg" alt="Diseño de uñas: Aparición en medios · 2" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 2</figcaption></figure>
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-2.webp" srcset="assets/img/prensa/aparicion-en-medios-2-640.webp 640w, assets/img/prensa/aparicion-en-medios-2.webp 1290w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Aparición en medios · 2" loading="lazy" decoding="async" width="1290" height="2318"><figcaption>Aparición en medios · 2</figcaption></figure>
       </li>
       <li class="cell" data-cat="prensa" data-label="Prensa">
-        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-3.jpg" alt="Diseño de uñas: Aparición en medios · 3" loading="lazy" width="440" height="550"><figcaption>Aparición en medios · 3</figcaption></figure>
+        <figure class="tile"><img src="assets/img/prensa/aparicion-en-medios-3.webp" srcset="assets/img/prensa/aparicion-en-medios-3-640.webp 640w, assets/img/prensa/aparicion-en-medios-3.webp 995w" sizes="(max-width:560px) 44vw, (max-width:900px) 42vw, (max-width:1240px) 28vw, 280px" alt="Diseño de uñas: Aparición en medios · 3" loading="lazy" decoding="async" width="995" height="1234"><figcaption>Aparición en medios · 3</figcaption></figure>
       </li>
     </ul>
   </section>
@@ -143,7 +164,10 @@
 <footer class="foot">
   <div class="foot-top">
     <div class="foot-col">
-      <p class="brand">Luucyy <em>Nails</em><small>by Yadira Sayago</small></p>
+      <a class="brand brand-logo brand-logo--footer" href="index.html" aria-label="Luucyy Nail Artist · Inicio">
+        <span class="brand-crop"><img src="assets/img/luucyy-logo-wide.webp?v=6" alt="" width="1000" height="549" loading="lazy" decoding="async"></span>
+        <small>Yadira Sayago · CDMX</small>
+      </a>
       <p class="foot-pitch">Manicura de precisión y nail art en la Ciudad de México. Diseño hecho a tu medida, con atención en español e inglés.</p>
       <a class="btn btn-primary" href="agenda.html"><span>Agendar cita</span></a>
     </div>
@@ -175,14 +199,14 @@
   <a class="btn fab-wa" href="https://wa.me/525528695896" target="_blank" rel="noopener"><span>WhatsApp</span></a>
   <a class="btn btn-primary" href="agenda.html"><span>Agendar</span></a>
 </div>
-<dialog class="lb" id="lb">
+<dialog class="lb" id="lb" aria-labelledby="lb-title" aria-describedby="lb-description">
   <figure>
-    <button class="lb-close" aria-label="Cerrar">✕</button>
-    <img src="" alt="">
+    <button class="lb-close" type="button" aria-label="Cerrar imagen ampliada">✕</button>
+    <img alt="" decoding="async">
     <figcaption class="info">
       <span class="eyebrow">Categoría</span>
-      <h3>Nombre</h3>
-      <p>Foto del portafolio de Yadira Sayago.</p>
+      <h2 id="lb-title" data-lightbox-title>Nombre</h2>
+      <p id="lb-description">Foto del portafolio de Yadira Sayago.</p>
     </figcaption>
   </figure>
 </dialog>
